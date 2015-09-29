@@ -1,0 +1,51 @@
+*{
+margin:0;padding:0
+}
+TABLE.fb_book_list_table {
+	BORDER-COLLAPSE: separate
+}
+TD.flippingbook_book_list_item {
+	BORDER-RIGHT: #e6e6e6 1px solid; PADDING-RIGHT: 5px; BORDER-TOP: #e6e6e6 1px solid; PADDING-LEFT: 5px; BACKGROUND: url(../images/book_list_bg.png) #ffffff repeat-x 0px 0px; PADDING-BOTTOM: 10px; BORDER-LEFT: #e6e6e6 1px solid; COLOR: #000000; PADDING-TOP: 10px; BORDER-BOTTOM: #e6e6e6 1px solid
+}
+.fb_contentheading {
+	FONT-WEIGHT: bold; FONT-SIZE: 16px; COLOR: #000000; LINE-HEIGHT: 20px; TEXT-DECORATION: none
+}
+.fb_contentheading:hover {
+	COLOR: #666666; TEXT-DECORATION: none
+}
+A.flippingbook_book_img {
+	FLOAT: left; MARGIN: 0px 10px 0px 0px; TEXT-DECORATION: none
+}
+.fb_bookDescription {
+	CLEAR: both; BORDER-RIGHT: #e6e6e6 1px solid; PADDING-RIGHT: 10px; BORDER-TOP: #e6e6e6 1px solid; PADDING-LEFT: 10px; BACKGROUND: url(../images/book_list_bg.png) #ffffff repeat-x 0px 0px; PADDING-BOTTOM: 10px; MARGIN: 0px; BORDER-LEFT: #e6e6e6 1px solid; COLOR: #333333; PADDING-TOP: 10px; BORDER-BOTTOM: #e6e6e6 1px solid
+}
+.fb_leftPageDescription {
+	BORDER-RIGHT: #e6e6e6 1px solid; PADDING-RIGHT: 10px; BORDER-TOP: #e6e6e6 1px solid; DISPLAY: none; PADDING-LEFT: 10px; BACKGROUND: url(../images/book_list_bg.png) #ffffff repeat-x 0px 0px; PADDING-BOTTOM: 10px; MARGIN: 0px; BORDER-LEFT: #e6e6e6 1px solid; COLOR: #333333; PADDING-TOP: 10px; BORDER-BOTTOM: #e6e6e6 1px solid
+}
+.fb_rightPageDescription {
+	BORDER-RIGHT: #e6e6e6 1px solid; PADDING-RIGHT: 10px; BORDER-TOP: #e6e6e6 1px solid; DISPLAY: none; PADDING-LEFT: 10px; BACKGROUND: url(../images/book_list_bg.png) #ffffff repeat-x 0px 0px; PADDING-BOTTOM: 10px; MARGIN: 0px; BORDER-LEFT: #e6e6e6 1px solid; COLOR: #333333; PADDING-TOP: 10px; BORDER-BOTTOM: #e6e6e6 1px solid
+}
+.fb_errorMessage {
+	PADDING-RIGHT: 10px; BORDER-TOP: #84a7db 3px solid; PADDING-LEFT: 10px; FONT-WEIGHT: bold; BORDER-LEFT-WIDTH: 0px; FONT-SIZE: 11px; PADDING-BOTTOM: 10px; COLOR: #0055bb; PADDING-TOP: 10px; BORDER-BOTTOM: #84a7db 3px solid; FONT-FAMILY: Arial, Helvetica, sans-serif; BACKGROUND-COLOR: #c3d2e5; BORDER-RIGHT-WIDTH: 0px
+}
+#altmsg {
+	PADDING-RIGHT: 0px; PADDING-LEFT: 0px; PADDING-BOTTOM: 5px; PADDING-TOP: 5px
+}
+#nav_bar {
+	PADDING-RIGHT: 0px; PADDING-LEFT: 0px; PADDING-BOTTOM: 20px; PADDING-TOP: 20px; TEXT-ALIGN: center
+}
+#nav_bar A:link {
+	PADDING-RIGHT: 4px; PADDING-LEFT: 4px; PADDING-BOTTOM: 2px; COLOR: #000; PADDING-TOP: 2px; BACKGROUND-COLOR: #eee; TEXT-DECORATION: none
+}
+#nav_bar A:visited {
+	PADDING-RIGHT: 4px; PADDING-LEFT: 4px; PADDING-BOTTOM: 2px; COLOR: #000; PADDING-TOP: 2px; BACKGROUND-COLOR: #eee; TEXT-DECORATION: none
+}
+#nav_bar A:active {
+	PADDING-RIGHT: 4px; PADDING-LEFT: 4px; PADDING-BOTTOM: 2px; COLOR: #000; PADDING-TOP: 2px; BACKGROUND-COLOR: #eee; TEXT-DECORATION: none
+}
+#nav_bar A:hover {
+	COLOR: #fff; BACKGROUND-COLOR: #eee
+}
+OBJECT {
+	outline: none
+}

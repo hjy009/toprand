@@ -1,0 +1,209 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE beans PUBLIC "-//SPRING//DTD BEAN//EN" "http://www.springframework.org/dtd/spring-beans.dtd">
+
+<beans>
+	<!-- Local DataSource that works in any environment -->
+	<!-- JNDI DataSource for J2EE environments -->	
+	<bean id="dataSource" class="org.springframework.jndi.JndiObjectFactoryBean">
+		<property name="jndiName"><value>java:comp/env/jdbc/mysql/newhc</value></property>
+	</bean>
+	
+	<bean id="sessionFactory" class="org.springframework.orm.hibernate.LocalSessionFactoryBean">
+		<property name="dataSource"><ref local="dataSource"/></property>
+		<property name="mappingResources">				
+			<list>
+				<!-- 用户管理 -->
+				<value>com/newhc/admin/entity/Dictionary.hbm.xml</value>
+				<value>com/newhc/admin/entity/AdminUser.hbm.xml</value>
+				<value>com/newhc/admin/entity/Role.hbm.xml</value>
+				<value>com/newhc/admin/entity/GroupRole.hbm.xml</value>
+				<value>com/newhc/admin/entity/AdminGroup.hbm.xml</value>
+				<value>com/newhc/admin/entity/AdminUserGroup.hbm.xml</value>
+				<value>com/newhc/admin/entity/Menu.hbm.xml</value>
+				<value>com/newhc/admin/entity/AdminUserMenu.hbm.xml</value>
+				<value>com/newhc/admin/entity/AdminUserLog.hbm.xml</value>
+				<!-- 中文版映射文件 -->
+				<value>com/newhc/admin/entity/ModelColumnImage.hbm.xml</value>
+				<value>com/newhc/admin/entity/ModelNews.hbm.xml</value>
+				<value>com/newhc/admin/entity/ModelNewsCenter.hbm.xml</value>
+
+				<value>com/newhc/admin/entity/ModelProductCategory.hbm.xml</value>
+				<value>com/newhc/admin/entity/ModelProduct.hbm.xml</value>
+				<value>com/newhc/admin/entity/ModelProductHistory.hbm.xml</value>
+
+				<value>com/newhc/admin/entity/ModelLink.hbm.xml</value>
+				<value>com/newhc/admin/entity/ModelContact.hbm.xml</value>
+
+				<value>com/newhc/admin/entity/ModelAdvertise.hbm.xml</value>
+				
+				<value>com/newhc/admin/entity/ModelCulture.hbm.xml</value>
+				<value>com/newhc/admin/entity/ModelEmployess.hbm.xml</value>
+				<value>com/newhc/admin/entity/ModelColumnsJump.hbm.xml</value>
+				<value>com/newhc/admin/entity/ModelRemeberTheBig.hbm.xml</value>
+				<value>com/newhc/admin/entity/ModelFactoryEnvironment.hbm.xml</value>
+				<value>com/newhc/admin/entity/ModelEnterprises.hbm.xml</value>
+				<value>com/newhc/admin/entity/ModelApplyfor.hbm.xml</value>
+				<value>com/newhc/admin/entity/ModelPeriodical.hbm.xml</value>
+				<value>com/newhc/admin/entity/ModelPeriodicalCenter.hbm.xml</value>
+				<value>com/newhc/admin/entity/ModelVideo.hbm.xml</value>
+				<value>com/newhc/admin/entity/ModelVideoCategory.hbm.xml</value>
+				<value>com/newhc/admin/entity/ModelPublicationType.hbm.xml</value>
+				<value>com/newhc/admin/entity/AidPart.hbm.xml</value>
+				<value>com/newhc/admin/entity/ModelAlbum.hbm.xml</value>
+				<value>com/newhc/admin/entity/ModelAlbumType.hbm.xml</value>
+				
+				
+				
+				<!-- 英文版映射文件 -->
+				<value>com/newhc/admin/entity/en/ModelColumnImageEn.hbm.xml</value>
+				<value>com/newhc/admin/entity/en/ModelColumnsJumpEn.hbm.xml</value>
+				<value>com/newhc/admin/entity/en/ModelNewsEn.hbm.xml</value>
+				<value>com/newhc/admin/entity/en/ModelNewsCenterEn.hbm.xml</value>
+
+				<value>com/newhc/admin/entity/en/ModelProductCategoryEn.hbm.xml</value>
+				<value>com/newhc/admin/entity/en/ModelProductEn.hbm.xml</value>
+				<value>com/newhc/admin/entity/en/ModelProductHistoryEn.hbm.xml</value>
+
+				<value>com/newhc/admin/entity/en/ModelLinkEn.hbm.xml</value>
+				<value>com/newhc/admin/entity/en/ModelContactEn.hbm.xml</value>
+
+				<value>com/newhc/admin/entity/en/ModelAdvertiseEn.hbm.xml</value>
+				
+				<value>com/newhc/admin/entity/en/ModelCultureEn.hbm.xml</value>
+				<value>com/newhc/admin/entity/en/ModelEmployessEn.hbm.xml</value>
+				<value>com/newhc/admin/entity/en/ModelRemeberTheBigEn.hbm.xml</value>
+				<value>com/newhc/admin/entity/en/ModelFactoryEnvironmentEn.hbm.xml</value>
+				<value>com/newhc/admin/entity/en/ModelEnterprisesEn.hbm.xml</value>
+				<value>com/newhc/admin/entity/en/ModelApplyforEn.hbm.xml</value>
+				<value>com/newhc/admin/entity/en/ModelPeriodicalEn.hbm.xml</value>
+				<value>com/newhc/admin/entity/en/ModelPeriodicalCenterEn.hbm.xml</value>
+				<value>com/newhc/admin/entity/en/ModelVideoEn.hbm.xml</value>
+				<value>com/newhc/admin/entity/en/ModelVideoCategoryEn.hbm.xml</value>
+				<value>com/newhc/admin/entity/en/ModelPublicationTypeEn.hbm.xml</value>
+				<value>com/newhc/admin/entity/en/AidPartEn.hbm.xml</value>
+				<value>com/newhc/admin/entity/en/ModelAlbumEn.hbm.xml</value>
+				<value>com/newhc/admin/entity/en/ModelAlbumTypeEn.hbm.xml</value>
+				
+				
+				
+				
+				<!-- 日文版映射文件 -->
+			</list>
+		</property>
+		<property name="hibernateProperties">
+			<props>
+				<!-- <prop key="hibernate.hbm2ddl.auto">create</prop> -->
+				
+				<prop key="hibernate.dialect">net.sf.hibernate.dialect.MySQLDialect</prop>
+				<prop key="hibernate.show_sql">false</prop>		
+				<prop key="hibernate.jdbc.fetch_size">30</prop>		
+				<prop key="hibernate.jdbc.batch_size">30</prop>
+				<prop key="hibernate.max_fetch_depth">1</prop>
+			</props>
+		</property>
+	</bean>
+
+	<!-- Transaction manager for a single Hibernate SessionFactory (alternative to JTA) -->
+	<bean id="transactionManager" class="org.springframework.orm.hibernate.HibernateTransactionManager">
+		<property name="sessionFactory"><ref local="sessionFactory"/></property>
+	</bean>
+
+	<!-- Transaction manager that delegates to JTA (for a transactional JNDI DataSource) -->
+	<!--
+	<bean id="transactionManager" class="org.springframework.transaction.jta.JtaTransactionManager"/>
+	-->	
+	<!-- ========================= DAO OBJECT DEFINITIONS ========================= -->
+	<bean id="jdbcDao" class="cn.com.netmovie.spring.jdbc.MySQLJdbcDaoSupport">
+		<property name="dataSource"><ref local="dataSource"/></property>
+	</bean>
+	<bean id="baseDao" class="com.newhc.admin.dao.impl.BaseDaoImpl">
+		<property name="sessionFactory"><ref local="sessionFactory"/></property>
+		<property name="jdbcDao"><ref local="jdbcDao"/></property>
+	</bean>
+	
+	<!-- 权限管理 -->
+	<bean id="adminUserDao" class="com.newhc.admin.dao.impl.AdminUserDaoImpl" parent="baseDao"/>
+	<bean id="roleDao" class="com.newhc.admin.dao.impl.RoleDaoImpl" parent="baseDao"/>
+	<bean id="groupRoleDao" class="com.newhc.admin.dao.impl.GroupRoleDaoImpl" parent="baseDao"/>
+	<bean id="adminGroupDao" class="com.newhc.admin.dao.impl.AdminGroupDaoImpl" parent="baseDao"/>
+	<bean id="adminUserGroupDao" class="com.newhc.admin.dao.impl.AdminUserGroupDaoImpl" parent="baseDao"/>
+	<bean id="menuDao" class="com.newhc.admin.dao.impl.MenuDaoImpl" parent="baseDao"/>
+	<bean id="adminUserMenuDao" class="com.newhc.admin.dao.impl.AdminUserMenuDaoImpl" parent="baseDao"/>
+	<bean id="adminUserLogDao" class="com.newhc.admin.dao.impl.AdminUserLogDaoImpl" parent="baseDao"/>
+	
+	<!-- 中文版管理 -->
+	<bean id="modelColumnImageDao" class="com.newhc.admin.dao.impl.ModelColumnImageDaoImpl" parent="baseDao"/>
+	<bean id="modelNewsDao" class="com.newhc.admin.dao.impl.ModelNewsDaoImpl" parent="baseDao"/>
+	<bean id="modelNewsCenterDao" class="com.newhc.admin.dao.impl.ModelNewCenterDaoImpl" parent="baseDao"/>
+
+	<bean id="modelProductCategoryDao" class="com.newhc.admin.dao.impl.ModelProductCategoryDaoImpl" parent="baseDao"/>
+
+	<bean id="modelLinkDao" class="com.newhc.admin.dao.impl.ModelLinkDaoImpl" parent="baseDao"/>
+	<bean id="modelContactDao" class="com.newhc.admin.dao.impl.ModelContactDaoImpl" parent="baseDao"/>
+	<bean id="modelAdvertiseDao" class="com.newhc.admin.dao.impl.ModelAdvertiseDaoImpl" parent="baseDao"/>
+
+	<bean id="modelCultureDao" class="com.newhc.admin.dao.impl.ModelCultureDaoImpl" parent="baseDao"/>
+	<bean id="modelEmployessDao" class="com.newhc.admin.dao.impl.ModelEmployessDaoImpl" parent="baseDao"/>
+	<bean id="modelColumnsJumpDao" class="com.newhc.admin.dao.impl.ModelColumnsJumpDaoImpl" parent="baseDao"/>
+	<bean id="modelRemeberTheBigDao" class="com.newhc.admin.dao.impl.ModelRemeberTheBigDaoImpl" parent="baseDao"/>
+	<bean id="modelEnterprisesDao" class="com.newhc.admin.dao.impl.ModelEnterprisesDaoImpl" parent="baseDao"/>
+	<bean id="modelFactoryEnvironmentDao" class="com.newhc.admin.dao.impl.ModelFactoryEnvironmentDaoImpl" parent="baseDao"></bean>
+	<bean id="modelApplyforDao" class="com.newhc.admin.dao.impl.ModelApplyforDaoImpl" parent="baseDao"></bean>
+	
+
+	<bean id="modelPeriodicalDao" class="com.newhc.admin.dao.impl.ModelPeriodicalDaoImpl" parent="baseDao"/>
+	<bean id="modelPeriodicalCenterDao" class="com.newhc.admin.dao.impl.ModelPeriodicalCenterDaoImpl" parent="baseDao"/>
+	<bean id="modelVideoDao" class="com.newhc.admin.dao.impl.ModelVideoDaoImpl" parent="baseDao"/>
+	<bean id="modelVideoCategoryDao" class="com.newhc.admin.dao.impl.ModelVideoCategoryDaoImpl" parent="baseDao"/>
+	<bean id="modelPublicationTypeDao" class="com.newhc.admin.dao.impl.ModelPublicationTypeDaoImpl" parent="baseDao"/>
+	<bean id="aidPartDao" class="com.newhc.admin.dao.impl.AidPartDaoImpl" parent="baseDao"/>
+	<bean id="modelAlbumDao" class="com.newhc.admin.dao.impl.ModelAlbumDaoImpl" parent="baseDao"/>
+	<bean id="modelAlbumTypeDao" class="com.newhc.admin.dao.impl.ModelAlbumTypeDaoImpl" parent="baseDao"/>
+	<!-- 英文版管理 -->
+	
+	<bean id="modelColumnImageEnDao" class="com.newhc.admin.dao.impl.en.ModelColumnImageEnDaoImpl" parent="baseDao"/>
+	<bean id="modelColumnsJumpEnDao" class="com.newhc.admin.dao.impl.en.ModelColumnsJumpDaoImpl" parent="baseDao"/>
+	<bean id="modelNewsEnDao" class="com.newhc.admin.dao.impl.en.ModelNewsEnDaoImpl" parent="baseDao"/>
+	<bean id="modelNewsCenterEnDao" class="com.newhc.admin.dao.impl.en.ModelNewCenterEnDaoImpl" parent="baseDao"/>
+
+	<bean id="modelProductCategoryEnDao" class="com.newhc.admin.dao.impl.en.ModelProductCategoryEnDaoImpl" parent="baseDao"/>
+
+	<bean id="modelLinkEnDao" class="com.newhc.admin.dao.impl.en.ModelLinkEnDaoImpl" parent="baseDao"/>
+	<bean id="modelContactEnDao" class="com.newhc.admin.dao.impl.en.ModelContactEnDaoImpl" parent="baseDao"/>
+	<bean id="modelAdvertiseEnDao" class="com.newhc.admin.dao.impl.en.ModelAdvertiseEnDaoImpl" parent="baseDao"/>
+
+	<bean id="modelCultureEnDao" class="com.newhc.admin.dao.impl.en.ModelCultureEnDaoImpl" parent="baseDao"/>
+	<bean id="modelEmployessEnDao" class="com.newhc.admin.dao.impl.en.ModelEmployessEnDaoImpl" parent="baseDao"/>
+	<bean id="modelRemeberTheBigEnDao" class="com.newhc.admin.dao.impl.en.ModelRemeberTheBigEnDaoImpl" parent="baseDao"/>
+	<bean id="modelEnterprisesEnDao" class="com.newhc.admin.dao.impl.en.ModelEnterprisesEnDaoImpl" parent="baseDao"/>
+	<bean id="modelFactoryEnvironmentEnDao" class="com.newhc.admin.dao.impl.en.ModelFactoryEnvironmentEnDaoImpl" parent="baseDao"></bean>
+	<bean id="modelApplyforEnDao" class="com.newhc.admin.dao.impl.en.ModelApplyforEnDaoImpl" parent="baseDao"></bean>
+	
+
+	<bean id="modelPeriodicalEnDao" class="com.newhc.admin.dao.impl.en.ModelPeriodicalEnDaoImpl" parent="baseDao"/>
+	<bean id="modelPeriodicalCenterEnDao" class="com.newhc.admin.dao.impl.en.ModelPeriodicalCenterEnDaoImpl" parent="baseDao"/>
+	<bean id="modelVideoEnDao" class="com.newhc.admin.dao.impl.en.ModelVideoEnDaoImpl" parent="baseDao"/>
+	<bean id="modelVideoCategoryEnDao" class="com.newhc.admin.dao.impl.en.ModelVideoCategoryEnDaoImpl" parent="baseDao"/>
+	<bean id="modelPublicationTypeEnDao" class="com.newhc.admin.dao.impl.en.ModelPublicationTypeEnDaoImpl" parent="baseDao"/>
+	<bean id="aidPartEnDao" class="com.newhc.admin.dao.impl.en.AidPartEnDaoImpl" parent="baseDao"/>
+	<bean id="modelAlbumEnDao" class="com.newhc.admin.dao.impl.en.ModelAlbumEnDaoImpl" parent="baseDao"/>
+	<bean id="modelAlbumTypeEnDao" class="com.newhc.admin.dao.impl.en.ModelAlbumTypeEnDaoImpl" parent="baseDao"/>
+	
+	
+	
+	
+	
+	
+	
+	
+	
+	
+	<!-- 日文版管理 -->
+	
+	<!-- web信息英文版管理 -->
+	
+	<!-- web信息日文版管理 -->
+	
+</beans>
+	
+

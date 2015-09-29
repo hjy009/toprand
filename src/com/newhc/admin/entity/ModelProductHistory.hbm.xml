@@ -1,0 +1,160 @@
+<?xml version="1.0"?>
+
+<!DOCTYPE hibernate-mapping PUBLIC
+    "-//Hibernate/Hibernate Mapping DTD 2.0//EN" 
+    "http://hibernate.sourceforge.net/hibernate-mapping-2.0.dtd">
+
+<hibernate-mapping>
+    <class
+        name="com.newhc.admin.entity.ModelProductHistory"
+        table="model_product_history"
+        dynamic-update="false"
+        dynamic-insert="false"
+    >
+
+        <id
+            name="id"
+            column="ID"
+            type="java.lang.Integer"
+            unsaved-value="null"
+        >
+            <generator class="native">
+            </generator>
+        </id>
+        
+        <property
+            name="productId"
+            type="java.lang.Integer"
+            update="true"
+            insert="true"
+            column="PRODUCT_ID"
+        />
+        
+        <property
+            name="name"
+            type="java.lang.String"
+            update="true"
+            insert="true"
+            column="NAME"
+        />
+		
+		<property
+            name="content"
+            type="java.lang.String"
+            update="true"
+            insert="true"
+            column="CONTENT"
+        />
+        
+        <property
+            name="smallImage"
+            type="java.lang.String"
+            update="true"
+            insert="true"
+            column="SMALL_IMAGE"
+        />
+        
+        <property
+            name="bigImage"
+            type="java.lang.String"
+            update="true"
+            insert="true"
+            column="BIG_IMAGE"
+        />
+        
+        <property
+            name="initPrice"
+            type="java.lang.Double"
+            update="true"
+            insert="true"
+            column="INIT_PRICE"
+        />
+        
+        <property
+            name="nowPrice"
+            type="java.lang.Double"
+            update="true"
+            insert="true"
+            column="NOW_PRICE"
+        />
+        
+        <property
+            name="discount"
+            type="java.lang.Integer"
+            update="true"
+            insert="true"
+            column="DISCOUNT"
+        />
+        
+        <property
+            name="sequence"
+            type="java.lang.Integer"
+            update="true"
+            insert="true"
+            column="SEQUENCE"
+        />
+        
+        <property
+            name="remark"
+            type="java.lang.String"
+            update="true"
+            insert="true"
+            column="REMARK"
+        />
+        
+        <property
+            name="status"
+            type="java.lang.Integer"
+            update="true"
+            insert="true"
+            column="STATUS"
+        />
+ 
+        <property
+            name="creator"
+            type="java.lang.String"
+            update="true"
+            insert="true"
+            column="CREATOR"
+        />
+        
+        <property
+            name="updator"
+            type="java.lang.String"
+            update="true"
+            insert="true"
+            column="UPDATOR"
+        />
+        
+        <property
+            name="createTime"
+            type="java.util.Date"
+            update="true"
+            insert="true"
+            column="CREATE_TIME"
+        />
+        
+        <property
+            name="updateTime"
+            type="java.util.Date"
+            update="true"
+            insert="true"
+            column="UPDATE_TIME"
+        />
+        
+        <property
+            name="pubTime"
+            type="java.util.Date"
+            update="true"
+            insert="true"
+            column="PUB_TIME"
+        />
+        <!--
+            To add non XDoclet property mappings, create a file named
+                hibernate-properties-Dictionary.xml
+            containing the additional properties and place it in your merge dir.
+        -->
+
+    </class>
+
+</hibernate-mapping>

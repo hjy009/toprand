@@ -1,0 +1,176 @@
+<!DOCTYPE xwork
+    PUBLIC "-//OpenSymphony Group//XWork 1.0//EN"
+    "http://www.opensymphony.com/xwork/xwork-1.0.dtd">
+
+<xwork>    
+    <!-- ============================== ACTION ======================================= -->  
+	<package name="admin" extends="default" namespace="/admin">
+		<!-- 登陆与退出 -->
+		<action name="adminLogin" class="com.newhc.admin.action.user.AdminUserAction" method="processLoginAction">
+			<result name="success" type="redirect">/admin/main.jsp</result>
+			<result name="error" type="dispatcher">/admin/index.jsp</result>
+		</action>
+		<action name="adminLoginOut" class="com.newhc.admin.action.user.AdminUserAction" method="processLoginOutAction">
+            <result name="success" type="redirect">/admin</result>
+        </action>
+        <!-- 用户管理 -->
+    	<action name="adminUserPage" class="com.newhc.admin.action.user.AdminUserAction" method="processPageAction">
+            <result name="success" type="dispatcher">/admin/adminUserPage.jsp</result>
+        </action>
+        <action name="prepareAddAdminUser" class="com.newhc.admin.action.user.AdminUserAction" method="processPrepareAddAction">
+	    	<result name="success" type="dispatcher">/admin/addAdminUser.jsp</result>
+	    	<interceptor-ref name="chainStack"/>
+    	</action>
+    	<action name="addAdminUser" class="com.newhc.admin.action.user.AdminUserAction" method="processAddAction">
+    		<result name="input" type="chain"><param name="actionName">prepareAddAdminUser</param></result>
+            <result name="success" type="chain"><param name="actionName">prepareAddAdminUser</param></result>
+            <interceptor-ref name="validationWorkflowStack"/>
+    	</action>
+    	<action name="prepareUpdateAdminUserStatus" class="com.newhc.admin.action.user.AdminUserAction" method="processPrepareUpdateStatusAction">
+	    	<result name="success" type="dispatcher">/admin/updateAdminUserStatus.jsp</result>
+	    	<interceptor-ref name="chainStack"/>
+    	</action>
+    	<action name="updateAdminUserStatus" class="com.newhc.admin.action.user.AdminUserAction" method="processUpdateStatusAction">
+    		<result name="input" type="chain"><param name="actionName">prepareUpdateAdminUserStatus</param></result>
+            <result name="success" type="chain"><param name="actionName">prepareUpdateAdminUserStatus</param></result>
+            <interceptor-ref name="validationWorkflowStack"/>
+    	</action>
+    	<action name="prepareUpdateAdminUser" class="com.newhc.admin.action.user.AdminUserAction" method="processPrepareUpdateAction">
+	    	<result name="success" type="dispatcher">/admin/updateAdminUser.jsp</result>
+	    	<interceptor-ref name="chainStack"/>
+    	</action>
+    	<action name="updateAdminUser" class="com.newhc.admin.action.user.AdminUserAction" method="processUpdateAction">
+    		<result name="input" type="chain"><param name="actionName">prepareUpdateAdminUser</param></result>
+            <result name="success" type="chain"><param name="actionName">prepareUpdateAdminUser</param></result>
+            <interceptor-ref name="validationWorkflowStack"/>
+    	</action>
+    	<action name="prepareUpdateAdminUserPassword" class="com.newhc.admin.action.user.AdminUserAction" method="processPrepareUpdatePasswordAction">
+	    	<result name="success" type="dispatcher">/admin/updateAdminUserPassword.jsp</result>
+	    	<interceptor-ref name="chainStack"/>
+    	</action>
+    	<action name="updateAdminUserPassword" class="com.newhc.admin.action.user.AdminUserAction" method="processUpdatePasswordAction">
+    		<result name="input" type="chain"><param name="actionName">prepareUpdateAdminUserPassword</param></result>
+            <result name="success" type="chain"><param name="actionName">prepareUpdateAdminUserPassword</param></result>
+            <interceptor-ref name="validationWorkflowStack"/>
+    	</action>
+    	<action name="deleteAdminUser" class="com.newhc.admin.action.user.AdminUserAction" method="processDeleteAction">
+            <result name="success" type="print"></result>
+    	</action>
+        <!-- 权限管理 -->
+        <action name="rolePage" class="com.newhc.admin.action.user.RoleAction" method="processPageAction">
+            <result name="success" type="dispatcher">/admin/rolePage.jsp</result>
+        </action>
+        <action name="prepareAddRole" class="com.newhc.admin.action.user.RoleAction" method="processPrepareAddAction">
+	    	<result name="success" type="dispatcher">/admin/addRole.jsp</result>
+	    	<interceptor-ref name="chainStack"/>
+    	</action>
+    	<action name="addRole" class="com.newhc.admin.action.user.RoleAction" method="processAddAction">
+    		<result name="input" type="chain"><param name="actionName">prepareAddRole</param></result>
+            <result name="success" type="chain"><param name="actionName">prepareAddRole</param></result>
+            <interceptor-ref name="validationWorkflowStack"/>
+    	</action>
+    	<action name="prepareUpdateRole" class="com.newhc.admin.action.user.RoleAction" method="processPrepareUpdateAction">
+	    	<result name="success" type="dispatcher">/admin/updateRole.jsp</result>
+	    	<interceptor-ref name="chainStack"/>
+    	</action>
+    	<action name="updateRole" class="com.newhc.admin.action.user.RoleAction" method="processUpdateAction">
+    		<result name="input" type="chain"><param name="actionName">prepareUpdateRole</param></result>
+            <result name="success" type="chain"><param name="actionName">prepareUpdateRole</param></result>
+            <interceptor-ref name="validationWorkflowStack"/>
+    	</action>
+    	<action name="deleteRole" class="com.newhc.admin.action.user.RoleAction" method="processDeleteAction">
+            <result name="success" type="print"></result>
+    	</action>
+    	<!-- 角色管理 -->
+    	<action name="adminGroupPage" class="com.newhc.admin.action.user.AdminGroupAction" method="processPageAction">
+            <result name="success" type="dispatcher">/admin/adminGroupPage.jsp</result>
+        </action>
+        <action name="prepareAddAdminGroup" class="com.newhc.admin.action.user.AdminGroupAction" method="processPrepareAddAction">
+	    	<result name="success" type="dispatcher">/admin/addAdminGroup.jsp</result>
+	    	<interceptor-ref name="chainStack"/>
+    	</action>
+    	<action name="addAdminGroup" class="com.newhc.admin.action.user.AdminGroupAction" method="processAddAction">
+    		<result name="input" type="chain"><param name="actionName">prepareAddAdminGroup</param></result>
+            <result name="success" type="chain"><param name="actionName">prepareAddAdminGroup</param></result>
+            <interceptor-ref name="validationWorkflowStack"/>
+    	</action>
+    	<action name="prepareUpdateAdminGroup" class="com.newhc.admin.action.user.AdminGroupAction" method="processPrepareUpdateAction">
+	    	<result name="success" type="dispatcher">/admin/updateAdminGroup.jsp</result>
+	    	<interceptor-ref name="chainStack"/>
+    	</action>
+    	<action name="updateGroup" class="com.newhc.admin.action.user.AdminGroupAction" method="processUpdateAction">
+    		<result name="input" type="chain"><param name="actionName">prepareUpdateAdminGroup</param></result>
+            <result name="success" type="chain"><param name="actionName">prepareUpdateAdminGroup</param></result>
+            <interceptor-ref name="validationWorkflowStack"/>
+    	</action>
+    	<action name="deleteAdminGroup" class="com.newhc.admin.action.user.AdminGroupAction" method="processDeleteAction">
+            <result name="success" type="print"></result>
+    	</action>
+    	<!-- 角色-权限 -->
+    	<action name="groupRoleList" class="com.newhc.admin.action.user.GroupRoleAction" method="processListAction">
+            <result name="success" type="dispatcher">/admin/groupRoleList.jsp</result>
+            <interceptor-ref name="chainStack"/>
+        </action>
+        <action name="updateGroupRole" class="com.newhc.admin.action.user.GroupRoleAction" method="processUpdateAction">
+        	<result name="success" type="chain"><param name="actionName">groupRoleList</param></result>
+        	<result name="input" type="chain"><param name="actionName">groupRoleList</param></result>
+        	<interceptor-ref name="validationWorkflowStack"/>
+    	</action>
+    	<!-- 角色列表 -->
+    	<action name="adminGroupList" class="com.newhc.admin.action.user.AdminGroupAction" method="processListAction">
+	    	<result name="success" type="dispatcher">/admin/adminGroupList.jsp</result>
+	    	<interceptor-ref name="chainStack"/>
+    	</action>
+    	<!-- 管理员-角色 -->
+    	<action name="updateAdminGroup" class="com.newhc.admin.action.user.AdminUserGroupAction" method="processUpdateAction">
+        	<result name="success" type="chain"><param name="actionName">adminGroupList</param></result>
+        	<result name="input" type="chain"><param name="actionName">adminGroupList</param></result>
+        	<interceptor-ref name="validationWorkflowStack"/>
+    	</action>
+    	<!-- 菜单管理 -->
+    	<action name="menuPage" class="com.newhc.admin.action.user.MenuAction" method="processPageAction">
+            <result name="success" type="dispatcher">/admin/menuPage.jsp</result>
+        </action>
+        <action name="prepareAddMenu" class="com.newhc.admin.action.user.MenuAction" method="processPrepareAddAction">
+	    	<result name="success" type="dispatcher">/admin/addMenu.jsp</result>
+	    	<interceptor-ref name="chainStack"/>
+    	</action>
+    	<action name="addMenu" class="com.newhc.admin.action.user.MenuAction" method="processAddAction">
+    		<result name="input" type="chain"><param name="actionName">prepareAddMenu</param></result>
+            <result name="success" type="chain"><param name="actionName">prepareAddMenu</param></result>
+            <interceptor-ref name="validationWorkflowStack"/>
+    	</action>
+    	<action name="prepareUpdateMenu" class="com.newhc.admin.action.user.MenuAction" method="processPrepareUpdateAction">
+	    	<result name="success" type="dispatcher">/admin/updateMenu.jsp</result>
+	    	<interceptor-ref name="chainStack"/>
+    	</action>
+    	<action name="updateMenu" class="com.newhc.admin.action.user.MenuAction" method="processUpdateAction">
+    		<result name="input" type="chain"><param name="actionName">prepareUpdateMenu</param></result>
+            <result name="success" type="chain"><param name="actionName">prepareUpdateMenu</param></result>
+            <interceptor-ref name="validationWorkflowStack"/>
+    	</action>
+    	<action name="deleteMenu" class="com.newhc.admin.action.user.MenuAction" method="processDeleteAction">
+            <result name="success" type="print"></result>
+    	</action>
+    	<!-- 用户-菜单 -->
+    	<action name="adminUserMenuList" class="com.newhc.admin.action.user.AdminUserMenuAction" method="processListAction">
+            <result name="success" type="dispatcher">/admin/adminUserMenuList.jsp</result>
+            <interceptor-ref name="chainStack"/>
+        </action>
+        <action name="updateAdminUserMenu" class="com.newhc.admin.action.user.AdminUserMenuAction" method="processUpdateAction">
+        	<result name="success" type="chain"><param name="actionName">adminUserMenuList</param></result>
+        	<result name="input" type="chain"><param name="actionName">adminUserMenuList</param></result>
+        	<interceptor-ref name="validationWorkflowStack"/>
+    	</action>
+    	<action name="menuList" class="com.newhc.admin.action.user.AdminUserMenuAction" method="processMenuListAction">
+            <result name="success" type="dispatcher">/admin/menu.jsp</result>
+        </action>
+        <action name="menuIntorList" class="com.newhc.admin.action.user.AdminUserMenuAction" method="processMenuIntorListAction">
+            <result name="success" type="dispatcher">/admin/intor.jsp</result>
+        </action>
+        <!-- 操作日志管理 -->
+        <action name="adminUserLogPage" class="com.newhc.admin.action.user.AdminUserLogAction" method="processPageAction">
+            <result name="success" type="dispatcher">/admin/adminUserLogPage.jsp</result>
+        </action>
+	</package>
+</xwork>

@@ -1,0 +1,32 @@
+﻿<?xml version="1.0" encoding="utf-8" ?>
+<server>
+
+<provinces id="0" name="新华昌集团">
+	<address><![CDATA[<p><font face="Arial, Helvetica, sans-serif">CXIC GROUP CONTAINERS COMPANY LIMITED<br>Add: 12/F,Xincheng International Building,88 Tong Jiang South Road,Changzhou,Jiangsu Province 213003,China<br>Tel: (86)519-86629288<br>Fax: (86)519-86629788<br>Postcode: 213003<br><br>CHANGZHOU XINHUACHANG INT'L CONTAINERS CO.,LTD<br>Add: 8 Huachang Road, Yaoguan Town, Changzhou, Jiangsu Prov., China<br>Tel: (86)519-88701088<br>        (86)519-88702588<br>Fax: (86)519-86629788 <br>         (86)519-88701888<br>Postcode: 213102<br><br>JIANGSU WANLONG SPECIAL CONTAINERS CO.,LTD<br>Add: NO.6 Huachang Road., Yaoguan Town, Changzhou, Jiangsu Prov., China<br>Fax: (86)519-88700237 <br>Postcode: 213102</font></p>]]></address>
+</provinces>
+
+<provinces id="1" name="天津新华昌">
+	<address><![CDATA[<p><font face="Arial, Helvetica, sans-serif">TIANJIN XINHUACHANG INT'L CONTAINERS CO.,LTD<br>Add: No.6 LiuJing Road,Ninghe EDZ,Tianjin,China<br>Tel: (86)22-69168288<br>Fax: (86)22-69169288<br>Postcode: 301500</font></p>]]></address>
+</provinces>
+
+<provinces id="2" name="青岛交运新华昌">
+	<address><![CDATA[<p><font face="Arial, Helvetica, sans-serif">QINGDAO XINHUAGHANG INTERNATIONAL CONTAINERS CO.,LTD<br>Add: 500 Guangzhou North Road,Jiaozhou,Qingdao,Shandong Province,China.<br>Tel: (86)532-88278088<br>Fax: (86)532-88278188<br>Postcode: 266300</font></p>]]></address>
+</provinces>
+
+<provinces id="3" name="浙江省嘉兴市">
+	<address><![CDATA[<p><font face="Arial, Helvetica, sans-serif">JIASHAN XINHUACHANG INTERNATIONAL CONTAINERS CO.,LTD<br>Add: 185 Nanxing Road,Weitang Street,Jiashan Zhejiang Prov.,China<br>Tel: (86)573-84633188<br>Fax: (86)573-84633088<br>Postcode: 314100<br><br>CXIC JIASHAN TIMBER PRODUCTS CO.,LTD<br>Add: 185 Nanxing Road,Weitang Street,Jiashan Zhejiang Prov.,China<br>Tel: (86)573-84633188<br>Fax: (86)573-84632391<br>Postcode: 314100</font></p>]]></address>
+</provinces>
+
+<provinces id="4" name="浙江省宁波">
+	<address><![CDATA[<p><font face="Arial, Helvetica, sans-serif">NINGBO XINHUACHANG INT'L CONTAINERS CO.,LTD.<br>add: 618 Fu Chun Jiang Road,The NETD,Ningbo,Zhejiang Prov,China.<br>Tel: (86)574-86805088<br>Fax: (86)574-86805188<br>Postcode: 315800</font></p>]]></address>
+</provinces>
+
+<provinces id="5" name="广东省惠州市">
+	<address><![CDATA[<p><font face="Arial, Helvetica, sans-serif">HUIZHOU XINHUACHANG INT'L CONTTAINERS CO.,LTD. <br>Add: No.65 Long Shan Yi Road,Huizhou Daya Bay ETDZ, Huizhou,Guangdong Province.<br>Tel: (86)752-5206088<br>Fax: (86)752-5206188<br>Postcode: 516085</font></p>]]></address>
+</provinces>
+
+<provinces id="6" name="加拿大">
+	<address><![CDATA[<p><font face="Arial, Helvetica, sans-serif">CXIC-GROUP North America Office<br>Add: 26355 127 AVE, Maple Ridge, BC, Canada, V2W 1C6<br>Tel: (1)604-251 2758<br>Fax: (1)604-251 5892<br>Contact: Cathy M. Gao</font></p>]]></address>
+</provinces>
+
+</server>

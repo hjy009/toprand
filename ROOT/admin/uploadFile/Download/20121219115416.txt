@@ -1,0 +1,86 @@
+﻿<%@ taglib prefix="ww" uri="webwork" %>
+<%@ page import="java.util.*"%>
+<%@ page import="cn.com.netmovie.util.*"%>
+<%
+
+
+	Pagination pageUtil = (Pagination)request.getAttribute("pages");
+	List list = (List)pageUtil.getList();
+ %>
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml">
+<head>
+<meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
+<meta name="keywords" content="" />
+<meta name="description" content="" />
+<meta name="author" content="xiaohe" />
+<title></title>
+<link rel="stylesheet" type="text/css" href="/chinese/css/style.css" />
+<script type="text/javascript" src="/chinese/js/jquery.js"></script>
+<script language="javascript">
+	function gotoPage(pno){
+		url = "/chinese/queryEjournalsDetail.do?pageNumber="+pno;
+		window.location.href=url;
+	}
+</script>
+</head>
+ <div class="rightbtn"><%if(pageUtil.getPageCount()<pageUtil.getPageNumber()+1){%><a><img src="/chinese/images/rightbtn.jpg" /></a><%}else{%><a  href="javascript:gotoPage(<%=pageUtil.getPageNumber()+1%>)" ><img src="/chinese/images/rightbtn.jpg" /></a><%}%> </div>
+      
+<body class="ebookbg">
+<div class="wrap4">
+
+
+  <div class="ebookcon">
+  <h2>新华昌简报</h2>
+  <%if(list!=null&&list.size()>0){ 
+          		for(int i = 0 ; i<list.size() ; i++){
+  %>
+  <span>1/4 <%=i+1 %>/<%=pageUtil.getPageNumber() %>/<%=pageUtil.getTotalCount() %></span>
+  <%} %>
+      	<%}else{ %>
+      		暂无
+      	<%} %>
+  <div class="cls"></div>
+    <div class="main_pbox">
+        <DIV class=scroll4>
+          <DIV id=arrLeft_02 class=arrLeft></DIV>
+          <DIV id=arrCont_02 class=arrCont>
+		    <ul class="arrlist">
+			     <%if(list!=null&&list.size()>0){ 
+			          		for(int i = 0 ; i<list.size() ; i++){
+			          			Map map = (Map)list.get(i);
+			        %>
+			      <li><img src="/<%=map.get("image_path") %>" width="847" height="1370" /></li>
+			      		<%} %>
+			      	<%}else{ %>
+			      		暂无
+			      	<%} %>
+		    </ul>
+     </DIV>
+     <DIV id=arrRright_02 class=arrRright></DIV></DIV>
+            <SCRIPT language=javascript src="/chinese/js/common.js"></SCRIPT> 
+            <SCRIPT language=javascript type=text/javascript>
+				  <!--//--><![CDATA[//><!--
+				  var focusScroll_01 = new ScrollPic();
+				  focusScroll_01.scrollContId	= "arrCont_02"; //内容容器ID
+				  focusScroll_01.arrLeftId	  = "arrLeft_02";//左箭头ID
+				  focusScroll_01.arrRightId	 = "arrRright_02"; //右箭头ID
+				  focusScroll_01.frameWidth	 = 847;//显示框宽度
+				  focusScroll_01.pageWidth	  = 847; //翻页宽度
+				  focusScroll_01.upright		= false; //垂直滚动
+				  focusScroll_01.speed		  = 5; //移动速度(单位毫秒，越小越快)
+				  focusScroll_01.space		  = 20; //每次移动像素(单位px，越大越快)
+				  focusScroll_01.autoPlay		= true; //自动播放
+				  focusScroll_01.autoPlayTime	= 5; //自动播放间隔时间(秒)
+				  focusScroll_01.initialize(); //初始化
+
+				  //--><!]]>
+			</SCRIPT>
+    
+    
+    
+  </div>
+</div>
+</body>
+
+</html>

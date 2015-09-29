@@ -1,0 +1,171 @@
+<?xml version="1.0"?>
+
+<!DOCTYPE hibernate-mapping PUBLIC
+    "-//Hibernate/Hibernate Mapping DTD 2.0//EN" 
+    "http://hibernate.sourceforge.net/hibernate-mapping-2.0.dtd">
+
+<hibernate-mapping>
+    <class
+        name="com.newhc.admin.entity.en.ModelApplyforEn"
+        table="model_applyfor_en"
+        dynamic-update="false"
+        dynamic-insert="false"
+    >
+
+        <id
+            name="id"
+            column="ID"
+            type="java.lang.Integer"
+            unsaved-value="null"
+        >
+            <generator class="native">
+            </generator>
+        </id>
+
+        <property
+            name="appliedPosition"
+            type="java.lang.String"
+            update="true"
+            insert="true"
+            column="APPLIED_POSITION"
+        />
+		<property
+            name="memberEnterprises"
+            type="java.lang.String"
+            update="true"
+            insert="true"
+            column="MEMBER_ENTERPRISES"
+        />
+        <property
+            name="name"
+            type="java.lang.String"
+            update="true"
+            insert="true"
+            column="NAME"
+        />
+        
+        
+        <property
+            name="sex"
+            type="java.lang.Integer"
+            update="true"
+            insert="true"
+            column="SEX"
+        />
+        
+         <property
+        	 name="dateOfBirth"
+            type="java.lang.String"
+            update="true"
+            insert="true"
+            column="DATE_OF_BIRTH"
+        />
+        
+         <property
+            name="certificate"
+            type="java.lang.String"
+            update="true"
+            insert="true"
+            column="CERTIFICATE"
+        />
+        
+        <property
+            name="address"
+            type="java.lang.String"
+            update="true"
+            insert="true"
+            column="ADDRESS"
+        />
+        <property
+            name="nativePlace"
+            type="java.lang.String"
+            update="true"
+            insert="true"
+            column="NATIVE_PLACE"
+        />
+        <property
+            name="phone"
+            type="java.lang.String"
+            update="true"
+            insert="true"
+            column="PHONE"
+        />
+        <property
+            name="email"
+            type="java.lang.String"
+            update="true"
+            insert="true"
+            column="EMAIL"
+        />
+        
+        <property
+            name="degree"
+            type="java.lang.String"
+            update="true"
+            insert="true"
+            column="DEGREE"
+        />
+        <property
+            name="professional"
+            type="java.lang.String"
+            update="true"
+            insert="true"
+            column="PROFESSIONAL"
+        />
+        <property
+            name="english"
+            type="java.lang.String"
+            update="true"
+            insert="true"
+            column="ENGLISH"
+        />
+        <property
+            name="educationExperience"
+            type="java.lang.String"
+            update="true"
+            insert="true"
+            column="EDUCATION_EXPERIENCE"
+        />
+        <property
+            name="workExperience"
+            type="java.lang.String"
+            update="true"
+            insert="true"
+            column="WORK_LIFE"
+        />
+        <property
+            name="workLife"
+            type="java.lang.String"
+            update="true"
+            insert="true"
+            column="WORK_EXPERIENCE"
+        />
+        <property
+            name="selfEvaluation"
+            type="java.lang.String"
+            update="true"
+            insert="true"
+            column="SELF_EVALUATION"
+        />
+        
+        <property
+            name="tablePath"
+            type="java.lang.String"
+            update="true"
+            insert="true"
+            column="TABLE_PATH"
+        />
+        
+        
+        
+        
+      
+        <!--
+            To add non XDoclet property mappings, create a file named
+                hibernate-properties-Dictionary.xml
+            containing the additional properties and place it in your merge dir.
+        -->
+
+    </class>
+
+</hibernate-mapping>

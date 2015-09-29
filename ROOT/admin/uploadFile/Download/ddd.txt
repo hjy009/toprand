@@ -1,0 +1,86 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE beans PUBLIC "-//SPRING//DTD BEAN//EN" "http://www.springframework.org/dtd/spring-beans.dtd">
+
+<beans>
+
+	<!-- ========================= RESOURCE DEFINITIONS ========================= -->
+  
+	<!-- Local DataSource that works in any environment -->
+	<!-- JNDI DataSource for J2EE environments -->	
+	<bean id="dataSource" class="org.springframework.jndi.JndiObjectFactoryBean">
+		<property name="jndiName"><value>java:comp/env/jdbc/mysql/mideatbi</value></property>
+	</bean>
+	
+	<bean id="sessionFactory" class="org.springframework.orm.hibernate.LocalSessionFactoryBean">
+		<property name="dataSource"><ref local="dataSource"/></property>
+		<property name="mappingResources">				
+			<list>
+				<!-- 用户管理 -->
+				<value>com/newhc/admin/entity/Dictionary.hbm.xml</value>
+				<value>com/newhc/admin/entity/AdminUser.hbm.xml</value>
+				<value>com/newhc/admin/entity/Role.hbm.xml</value>
+				<value>com/newhc/admin/entity/GroupRole.hbm.xml</value>
+				<value>com/newhc/admin/entity/AdminGroup.hbm.xml</value>
+				<value>com/newhc/admin/entity/AdminUserGroup.hbm.xml</value>
+				<value>com/newhc/admin/entity/Menu.hbm.xml</value>
+				<value>com/newhc/admin/entity/AdminUserMenu.hbm.xml</value>
+				<value>com/newhc/admin/entity/AdminUserLog.hbm.xml</value>
+				<!-- 中文版映射文件 -->
+				<value>com/newhc/admin/entity/ModelNews.hbm.xml</value>
+				<value>com/newhc/admin/entity/ModelLink.hbm.xml</value>
+				<!-- 英文版映射文件 -->
+				<!-- 日文版映射文件 -->
+			</list>
+		</property>
+		<property name="hibernateProperties">
+			<props>
+				<!-- <prop key="hibernate.hbm2ddl.auto">create</prop> -->
+				
+				<prop key="hibernate.dialect">net.sf.hibernate.dialect.MySQLDialect</prop>
+				<prop key="hibernate.show_sql">false</prop>		
+				<prop key="hibernate.jdbc.fetch_size">30</prop>		
+				<prop key="hibernate.jdbc.batch_size">30</prop>
+				<prop key="hibernate.max_fetch_depth">1</prop>
+			</props>
+		</property>
+	</bean>
+
+	<!-- Transaction manager for a single Hibernate SessionFactory (alternative to JTA) -->
+	<bean id="transactionManager" class="org.springframework.orm.hibernate.HibernateTransactionManager">
+		<property name="sessionFactory"><ref local="sessionFactory"/></property>
+	</bean>
+
+	<!-- Transaction manager that delegates to JTA (for a transactional JNDI DataSource) -->
+	<!--
+	<bean id="transactionManager" class="org.springframework.transaction.jta.JtaTransactionManager"/>
+	-->	
+	<!-- ========================= DAO OBJECT DEFINITIONS ========================= -->
+	<bean id="jdbcDao" class="cn.com.netmovie.spring.jdbc.MySQLJdbcDaoSupport">
+		<property name="dataSource"><ref local="dataSource"/></property>
+	</bean>
+	<bean id="baseDao" class="com.newhc.admin.dao.impl.BaseDaoImpl">
+		<property name="sessionFactory"><ref local="sessionFactory"/></property>
+		<property name="jdbcDao"><ref local="jdbcDao"/></property>
+	</bean>
+	
+	<!-- 权限管理 -->
+	<bean id="adminUserDao" class="com.newhc.admin.dao.impl.AdminUserDaoImpl" parent="baseDao"/>
+	<bean id="roleDao" class="com.newhc.admin.dao.impl.RoleDaoImpl" parent="baseDao"/>
+	<bean id="groupRoleDao" class="com.newhc.admin.dao.impl.GroupRoleDaoImpl" parent="baseDao"/>
+	<bean id="adminGroupDao" class="com.newhc.admin.dao.impl.AdminGroupDaoImpl" parent="baseDao"/>
+	<bean id="adminUserGroupDao" class="com.newhc.admin.dao.impl.AdminUserGroupDaoImpl" parent="baseDao"/>
+	<bean id="menuDao" class="com.newhc.admin.dao.impl.MenuDaoImpl" parent="baseDao"/>
+	<bean id="adminUserMenuDao" class="com.newhc.admin.dao.impl.AdminUserMenuDaoImpl" parent="baseDao"/>
+	<bean id="adminUserLogDao" class="com.newhc.admin.dao.impl.AdminUserLogDaoImpl" parent="baseDao"/>
+	
+	<!-- 中文版管理 -->
+	<bean id="modelNewsDao" class="com.newhc.admin.dao.impl.ModelNewsDaoImpl" parent="baseDao"/>
+	<bean id="modelLinkDao" class="com.newhc.admin.dao.impl.ModelLinkDaoImpl" parent="baseDao"/>
+	<!-- 英文版管理 -->
+	<!-- 日文版管理 -->
+	
+	<!-- web信息英文版管理 -->
+	
+	<!-- web信息日文版管理 -->
+	
+</beans>

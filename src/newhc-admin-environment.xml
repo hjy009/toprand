@@ -1,0 +1,13 @@
+<?xml version="1.0" encoding="GBK"?> 
+  <properties>
+	<property key="ONLINE_COOKIE_NAME" ><![CDATA[NEWHC_ADMIN_COOKIE_NAME]]></property>
+	<property key="IGNORE_PAGES" ><![CDATA[]]></property>
+	<property key="DOMAIN_NAME" ><![CDATA[newhuachang.com]]></property>
+	<property key="DEBUG" ><![CDATA[true]]></property>
+	
+	<property key="DATABASE_BIN_PATH" ><![CDATA[d:/website/mysql/bin/]]></property>
+	<property key="DATABASE_NAME" ><![CDATA[db_new_huachang]]></property>
+	<property key="DATABASE_USERNAME" ><![CDATA[new_huachang]]></property>
+	<property key="DATABASE_PASSWORD" ><![CDATA[86$2#093]]></property>
+	<property key="DATABASE_HOST" ><![CDATA[192.168.1.60]]></property>
+  </properties>

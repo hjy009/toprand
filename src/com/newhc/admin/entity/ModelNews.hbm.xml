@@ -1,0 +1,159 @@
+<?xml version="1.0"?>
+
+<!DOCTYPE hibernate-mapping PUBLIC
+    "-//Hibernate/Hibernate Mapping DTD 2.0//EN" 
+    "http://hibernate.sourceforge.net/hibernate-mapping-2.0.dtd">
+
+<hibernate-mapping>
+    <class
+        name="com.newhc.admin.entity.ModelNews"
+        table="model_news"
+        dynamic-update="false"
+        dynamic-insert="false"
+    >
+
+        <id
+            name="id"
+            column="ID"
+            type="java.lang.Integer"
+            unsaved-value="null"
+        >
+            <generator class="native">
+            </generator>
+        </id>
+        <property
+            name="centerId"
+            type="java.lang.Integer"
+            update="true"
+            insert="true"
+            column="CENTER_ID"
+        />
+        <property
+            name="title"
+            type="java.lang.String"
+            update="true"
+            insert="true"
+            column="TITLE"
+        />
+
+        <property
+            name="content"
+            type="java.lang.String"
+            update="true"
+            insert="true"
+            column="CONTENT"
+        />
+        <property
+            name="path"
+            type="java.lang.String"
+            update="true"
+            insert="true"
+            column="PATH"
+        />
+        
+        <property
+            name="syPath"
+            type="java.lang.String"
+            update="true"
+            insert="true"
+            column="SY_PATH"
+        />
+        
+        <property
+            name="source"
+            type="java.lang.String"
+            update="true"
+            insert="true"
+            column="SOURCE"
+        />
+        
+        <property
+            name="reporter"
+            type="java.lang.String"
+            update="true"
+            insert="true"
+            column="REPORTER"
+        />
+
+		<property
+            name="pubTime"
+            type="java.util.Date"
+            update="true"
+            insert="true"
+            column="PUB_TIME"
+        />
+        
+        <property
+            name="status"
+            type="java.lang.Integer"
+            update="true"
+            insert="true"
+            column="STATUS"
+        />
+        
+         <property
+            name="sequence"
+            type="java.lang.Integer"
+            update="true"
+            insert="true"
+            column="SEQUENCE"
+        />
+        
+        <property
+            name="creator"
+            type="java.lang.String"
+            update="true"
+            insert="true"
+            column="CREATOR"
+        />
+        
+        <property
+            name="updator"
+            type="java.lang.String"
+            update="true"
+            insert="true"
+            column="UPDATOR"
+        />
+        <property
+            name="createTime"
+            type="java.util.Date"
+            update="true"
+            insert="true"
+            column="CREATE_TIME"
+        />
+        
+        <property
+            name="updateTime"
+            type="java.util.Date"
+            update="true"
+            insert="true"
+            column="UPDATE_TIME"
+        />
+        
+        
+     
+        
+		<property
+            name="click"
+            type="java.lang.Integer"
+            update="true"
+            insert="true"
+            column="CLICK"
+        />
+        
+        <property
+            name="year"
+            type="java.lang.Integer"
+            update="true"
+            insert="true"
+            column="YEAR"
+        />
+        <!--
+            To add non XDoclet property mappings, create a file named
+                hibernate-properties-Dictionary.xml
+            containing the additional properties and place it in your merge dir.
+        -->
+
+    </class>
+
+</hibernate-mapping>

@@ -1,0 +1,23 @@
+wjname = Sheets("主页").Cells(3, 1)
+    name = Sheets("主页").Cells(3, 2)
+   Do
+      
+      
+         With S.Worksheets
+          Set sh = .Add(after:=S.Worksheets(.Count))
+          sh.name = name
+         End With
+      
+    Workbooks.Open FileName:=x & wjname & "\" & name & ".xls" '先打开要复制的文件
+   Set t = ActiveWorkbook
+   
+ t.Sheets(name).Copy S.Sheets(name) '再将此文件中第一个工作表复制到当前工作簿的第一个工作表前
+       '
+         
+       ' Call Test_(s, t, 7, 7, 4, 5)      '复制区域（A2:C8）数值
+        ' s.Sheets("中高端120").Cells(7, 4).Value = t.Sheets("中高端120").Cells(7, 4).Value
+    ' ActiveWorkbook.Close SaveChanges:=True
+        i = i + 1
+        wjname = Sheets("主页").Cells(i, 1)
+        name = Sheets("主页").Cells(i, 2)
+    Loop Until wjname = ""

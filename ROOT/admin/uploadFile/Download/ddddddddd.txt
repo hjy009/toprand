@@ -1,0 +1,220 @@
+	public List queryGSFormDownloadList(String name,Integer type) {
+		StringBuffer query = new StringBuffer();
+		List values = new ArrayList();
+		query.append("SELECT id,name,path FROM form_download WHERE 1 = 1 ");
+		if(!StringHelper.isEmpty(name)){
+			query.append("AND name = ? ");
+			values.add(name);
+		}
+		if(NumbericHelper.getIntValue(type, -1)>-1){
+			query.append("AND type = ? ");
+			values.add(type);
+		}
+		
+		return super.getJdbcDao().getJdbcTemplate().query(query.toString(), values.toArray(),new MapObjectRowMapper());
+	}
+//***********************************************************************************************************************************************************************/
+	private FormDownload formDownload = new FormDownload();
+	private List gfList;
+	private File fileImage;
+	private File fileImage0;
+	private File fileImage1;
+	private File fileImage2;
+	private File fileImage3;
+	private File fileImage4;
+	private Integer fdId0;
+	private Integer fdId1;
+	private Integer fdId2;
+	private Integer fdId3;
+	private Integer fdId4;
+	private String fileImageFileName;
+	private String fileImage0FileName;
+	private String fileImage1FileName;
+	private String fileImage2FileName;
+	private String fileImage3FileName;
+	private String fileImage4FileName;
+	private List managementGuidelinesList;
+	private List technologyEnrollmentList;
+	private List networkDeclareProcessList;
+	private List nationalSupportTechnologyList;
+	private List intellectualPropertyList;
+	private String name;
+	private Integer type;
+
+			gardenService.setCognizance((String)((Map)list.get(0)).get("cognizance"));
+			gardenService.setColleage((String)((Map)list.get(0)).get("colleage"));
+			gardenService.setCondit((String)((Map)list.get(0)).get("condit"));
+			gardenService.setExtend((String)((Map)list.get(0)).get("extend"));
+			gardenService.setLending((String)((Map)list.get(0)).get("lending"));
+			gardenService.setProperty((String)((Map)list.get(0)).get("property"));
+			gardenService.setService((String)((Map)list.get(0)).get("service"));
+		}
+		managementGuidelinesList = DaoFactory.getGardenServiceDao().queryGSFormDownloadList("managementGuidelines",new Integer(3));
+		technologyEnrollmentList = DaoFactory.getGardenServiceDao().queryGSFormDownloadList("technologyEnrollment",new Integer(3));
+		networkDeclareProcessList = DaoFactory.getGardenServiceDao().queryGSFormDownloadList("networkDeclareProcess",new Integer(3));
+		nationalSupportTechnologyList = DaoFactory.getGardenServiceDao().queryGSFormDownloadList("nationalSupportTechnology",new Integer(3));
+		intellectualPropertyList = DaoFactory.getGardenServiceDao().queryGSFormDownloadList("intellectualProperty",new Integer(4));
+
+			//判断文件大小
+			if(fileImage0!=null&&fileImage0FileName!=null){
+				boolean isSuitSize = ImageHelperUtil.isSuitFileSize(fileImage0);
+				if(!isSuitSize){
+					super.setActionResponse(RESPONSE_FAILURE,Constants.fileSizeString);
+		        	return SUCCESS;
+				}
+			}
+			if(fileImage0!=null&&fileImage0FileName!=null){
+				byte[] content = FileHelperUtil.readFile(fileImage0.getAbsolutePath());
+				FileHelperUtil.writeFile(uploadImagePath, fileImage0FileName, content);
+			}
+			if(fileImage0FileName!=null&&fileImage0FileName.length()>0){
+				fd0.setPath(dataImagePath+fileImage0FileName);
+			}
+			fd0.setUpdator(super.getOnlineUser().getName());
+			fd0.setUpdateTime(new Date());
+			DaoFactory.getGardenServiceDao().updateGSFormDownload(fd0);
+			}
+
+	/**
+	 * 准备新增
+	 * @return
+	 */
+	public String processPrepareAddGsFormDownloadAction(){
+		Integer userId = super.getOnlineUserId();
+		if(userId==null) throw new ServiceException(ErrorCode.INVALID_REQUEST);
+		return SUCCESS;
+	}
+	/**
+	 * 新增
+	 * @return
+	 */
+	public String processAddGsFormDownloadAction(){
+		Integer userId = super.getOnlineUserId();
+		if(userId==null) throw new ServiceException(ErrorCode.INVALID_REQUEST);
+		if(StringHelper.isEmpty(name)){
+			super.setActionResponse(RESPONSE_FAILURE);
+			return INPUT;
+		}
+		
+		if(fileImage!=null&&fileImageFileName!=null){
+			byte[] content = FileHelperUtil.readFile(fileImage.getAbsolutePath());
+			FileHelperUtil.writeFile(uploadImagePath, fileImageFileName, content);
+		}
+		if(fileImageFileName!=null&&fileImageFileName.length()>0){
+			formDownload.setPath(dataImagePath+fileImageFileName);
+		}
+		formDownload.setName(name);
+		formDownload.setCreator(super.getOnlineUser().getName());
+		formDownload.setType(type);
+		formDownload.setStatus(new Integer(0));
+		formDownload.setCreateTime(new Date());
+		DaoFactory.getGardenServiceDao().addGSFormDownload(formDownload);
+		super.setActionResponse(RESPONSE_SUCCESS);
+		return SUCCESS;
+	}
+
+
+//***********************************************************************************************************************************************************************/
+   <tr>
+  	<th>企业知识产权服务需求登记表：</th>
+  <ww:if test="intellectualPropertyList.size()==0">
+  		<td>&nbsp;文件：暂无&nbsp;&nbsp;&nbsp;<input type="button" value="添加..." onClick="prepareAddGsFormDownload('intellectualProperty',4)" />
+		<br><font color="#FF0000">(上传的文件只支持txt,rar,zip,doc,docx,xls,xlsx格式,大小不能超过10M)</font>
+		</td>
+  		
+  	</ww:if>
+  	<ww:else>
+  		<ww:iterator value="intellectualPropertyList">
+  			<td><input type="file" id="fileImage4" name="fileImage4" value="<ww:property value='path' />" size="30">
+  			文件：<ww:property value='path' />
+  			<input type="hidden" id="" name="fdId4" value="<ww:property value='id'/>">
+  			<br><font color="#FF0000">(上传的文件只支持txt,rar,zip,doc,docx,xls,xlsx格式,大小不能超过10M)</font>
+			</td>
+  		</ww:iterator>
+  	</ww:else>
+  </tr>
+  
+    <tr>
+    <th>高新技术企业认定：</th>
+    <td>&nbsp;
+		<script type="text/javascript">
+			var sBasePath = "/fckeditor/" ;
+			var oFCKeditor = new FCKeditor( 'FCKeditor4' ) ;
+			oFCKeditor.BasePath	= sBasePath ;
+			oFCKeditor.Height	= 200 ;
+			oFCKeditor.Value = "<ww:property value="gardenService.cognizance"/>";
+			oFCKeditor.Create() ;
+		</script>
+	</td>
+  </tr>
+   <tr>
+  	<th>高新企业认定管理工作指引：</th>
+  <ww:if test="managementGuidelinesList.size()==0">
+  		<td>&nbsp;文件：暂无&nbsp;&nbsp;&nbsp;<input type="button" value="添加..." onClick="prepareAddGsFormDownload('managementGuidelines',3)" />
+		<br><font color="#FF0000">(上传的文件只支持txt,rar,zip,doc,docx,xls,xlsx格式,大小不能超过10M)</font>
+		</td>
+  		
+  	</ww:if>
+  	<ww:else>
+  		<ww:iterator value="managementGuidelinesList">
+  			<td><input type="file" id="fileImage0" name="fileImage0" value="<ww:property value='path' />" size="30">
+  			文件：<ww:property value='path' />
+  			<input type="hidden" id="" name="fdId0" value="<ww:property value='id'/>">
+  			<br><font color="#FF0000">(上传的文件只支持txt,rar,zip,doc,docx,xls,xlsx格式,大小不能超过10M)</font>
+			</td>
+  		</ww:iterator>
+  	</ww:else>
+  </tr>
+    <tr>
+  	<th>高新技术企业认定登记表：</th>
+  <ww:if test="technologyEnrollmentList.size()==0">
+  		<td>&nbsp;文件：暂无&nbsp;&nbsp;&nbsp;<input type="button" value="添加..." onClick="prepareAddGsFormDownload('technologyEnrollment',3)" />
+		<br><font color="#FF0000">(上传的文件只支持txt,rar,zip,doc,docx,xls,xlsx格式,大小不能超过10M)</font>
+		</td>	
+  	</ww:if>
+  	<ww:else>
+  		<ww:iterator value="technologyEnrollmentList">
+  			<td><input type="file" id="fileImage1" name="fileImage1" value="<ww:property value='path' />" size="30">
+  			文件：<ww:property value='path' />
+  			<input type="hidden" id="" name="fdId1" value="<ww:property value='id'/>">
+			<br><font color="#FF0000">(上传的文件只支持txt,rar,zip,doc,docx,xls,xlsx格式,大小不能超过10M)</font>
+  			</td>
+  		</ww:iterator>
+  	</ww:else>
+  </tr>
+    <tr>
+  	<th>高企认定网络申报流程：</th>
+  <ww:if test="networkDeclareProcessList.size()==0">
+  		<td>&nbsp;文件：暂无&nbsp;&nbsp;&nbsp;<input type="button" value="添加..." onClick="prepareAddGsFormDownload('networkDeclareProcess',3)" />
+		<br><font color="#FF0000">(上传的文件只支持txt,rar,zip,doc,docx,xls,xlsx格式,大小不能超过10M)</font>
+		</td>
+  		
+  	</ww:if>
+  	<ww:else>
+  		<ww:iterator value="networkDeclareProcessList">
+  			<td><input type="file" id="fileImage2" name="fileImage2" value="<ww:property value='path' />" size="30">
+  			文件：<ww:property value='path' />
+  			<input type="hidden" id="" name="fdId2" value="<ww:property value='id'/>">
+  			<br><font color="#FF0000">(上传的文件只支持txt,rar,zip,doc,docx,xls,xlsx格式,大小不能超过10M)</font>
+			</td>
+  		</ww:iterator>
+  	</ww:else>
+  </tr>
+    <tr>
+  	<th>国家重点支持的高新技术领域：</th>
+  <ww:if test="nationalSupportTechnologyList.size()==0">
+  		<td>&nbsp;文件：暂无&nbsp;&nbsp;&nbsp;<input type="button" value="添加..." onClick="prepareAddGsFormDownload('nationalSupportTechnology',3)" />
+		<br><font color="#FF0000">(上传的文件只支持txt,rar,zip,doc,docx,xls,xlsx格式,大小不能超过10M)</font>
+		</td>
+  		
+  	</ww:if>
+  	<ww:else>
+  		<ww:iterator value="nationalSupportTechnologyList">
+  			<td><input type="file" id="fileImage3" name="fileImage3" value="<ww:property value='path' />" size="30">
+  			文件：<ww:property value='path' />
+  			<input type="hidden" id="" name="fdId3" value="<ww:property value='id'/>">
+			<br><font color="#FF0000">(上传的文件只支持txt,rar,zip,doc,docx,xls,xlsx格式,大小不能超过10M)</font>
+  			</td>
+  		</ww:iterator>
+  	</ww:else>
+  </tr>

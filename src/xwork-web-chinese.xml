@@ -1,0 +1,203 @@
+<!DOCTYPE xwork
+    PUBLIC "-//OpenSymphony Group//XWork 1.0//EN"
+    "http://www.opensymphony.com/xwork/xwork-1.0.dtd">
+
+<xwork>    
+    <!-- ============================== ACTION ======================================= -->  
+	<package name="webchinese" extends="default" namespace="">
+		<action name="index" class="com.newhc.web.action.IndexWebAction" method="processIndexWebAction">
+			<result name="success" type="dispatcher">/chinese/index.jsp</result>
+		</action>
+		
+		<!-- 搜索 -->
+		<action name="searchNews" class="com.newhc.web.action.searchWebAction" method="processByNewsAction">
+			<result name="success" type="dispatcher">/chinese/search/news.jsp</result>
+		</action>
+		<action name="searchProduct" class="com.newhc.web.action.searchWebAction" method="processByProductAction">
+			<result name="success" type="dispatcher">/chinese/search/product.jsp</result>
+		</action>
+		<!-- 新华昌简介 -->
+		<action name="introWeb" class="com.newhc.web.action.CxicIntroductionWebAction" method="processIntroWebAction">
+			<result name="success" type="dispatcher">/chinese/about/intro.jsp</result>
+		</action>
+		<action name="enterprisesWeb" class="com.newhc.web.action.CxicIntroductionWebAction" method="processEnterprisesWebAction">
+			<result name="success" type="dispatcher">/chinese/about/enterprises.jsp</result>
+		</action>
+		<action name="enterprisesDetailWeb" class="com.newhc.web.action.CxicIntroductionWebAction" method="processEnterprisesDetailWebAction">
+			<result name="success" type="dispatcher">/chinese/about/enterprisesDetail.jsp</result>
+		</action>
+		<action name="videoWeb" class="com.newhc.web.action.VideoWebAction" method="processVideoAction">
+			<result name="success" type="dispatcher">/chinese/about/video.jsp</result>
+		</action>
+		<action name="videoDetaiWeb" class="com.newhc.web.action.VideoWebAction" method="processVideoDetaiAction">
+			<result name="success" type="dispatcher">/chinese/about/video_detail.jsp</result>
+		</action>
+		<!-- 企业文化 -->
+    	<action name="cultureWeb" class="com.newhc.web.action.CultureWebAction" method="processCultureIdWebAction">
+			<result name="success" type="dispatcher">/chinese/culture/cultureIndex.jsp</result>
+		</action>
+		<action name="cultureByTargetWeb" class="com.newhc.web.action.CultureWebAction" method="processTargetWebAction">
+			<result name="success" type="dispatcher">/chinese/culture/target.jsp</result>
+		</action>
+		<action name="cultureByDutyWeb" class="com.newhc.web.action.CultureWebAction" method="processCultureIdWebAction">
+			<result name="success" type="dispatcher">/chinese/culture/duty.jsp</result>
+		</action>
+		<action name="cultureByEnterpriseWeb" class="com.newhc.web.action.CultureWebAction" method="processCultureIdWebAction">
+			<result name="success" type="dispatcher">/chinese/culture/enterprise.jsp</result>
+		</action>
+		<action name="cultureByCustomerWeb" class="com.newhc.web.action.CultureWebAction" method="processCultureIdWebAction">
+			<result name="success" type="dispatcher">/chinese/culture/customer.jsp</result>
+		</action>
+		<action name="cultureByCoreWeb" class="com.newhc.web.action.CultureWebAction" method="processCultureByCoreWebAction">
+			<result name="success" type="dispatcher">/chinese/culture/core.jsp</result>
+		</action>
+		<action name="cultureByVisionWeb" class="com.newhc.web.action.CultureWebAction" method="processCultureIdWebAction">
+			<result name="success" type="dispatcher">/chinese/culture/vision.jsp</result>
+		</action>
+		<!-- 联系我们 -->
+		
+		<action name="queryModelContact" class="com.newhc.admin.action.user.ModelContactAction" method="processQueryModelContactAction">
+    		<result name="success" type="dispatcher">/chinese/contact/index.jsp</result>
+    		<interceptor-ref name="chainStack"/>
+    	</action>
+    	<action name="queryModelContactId" class="com.newhc.admin.action.user.ModelContactAction" method="processCultureIdWebAction">
+    		<result name="success" type="dispatcher">/chinese/contact/index.jsp</result>
+    		<interceptor-ref name="chainStack"/>
+    	</action>
+    	
+
+    	<!-- 新闻中心 -->
+    	
+    	<action name="queryQiyeNews" class="com.newhc.web.action.NewsWebAction" method="processQiyeNewsWebAction">
+			<result name="success" type="dispatcher">/chinese/news/qiyeNews.jsp</result>
+			 
+		</action>
+    	<action name="queryHyeNews" class="com.newhc.web.action.NewsWebAction" method="processHyeNewsWebAction">
+			<result name="success" type="dispatcher">/chinese/news/hyeNews.jsp</result>
+		</action>
+		
+		<action name="queryQiyeNewsDetail" class="com.newhc.web.action.NewsWebAction" method="processQiyeNewsDetailWebAction">
+			<result name="success" type="dispatcher">/chinese/news/qiyeDetail.jsp</result>
+		</action>
+		
+		<action name="queryHyeNewsDetail" class="com.newhc.web.action.NewsWebAction" method="processHyeNewsDetailWebAction">
+			<result name="success" type="dispatcher">/chinese/news/hyeDetail.jsp</result>
+		</action>
+		
+		<!-- 企业荣誉 -->
+		<action name="queryRemeberTheBig" class="com.newhc.web.action.RemeberTheBigWebAction" method="processsQueryRemeberTheBigAction">
+			<result name="success" type="dispatcher">/chinese/about/hr.jsp</result>
+		</action>
+		
+		<!-- 大事记 -->
+		<action name="queryRemeberBig" class="com.newhc.web.action.RemeberTheBigWebAction" method="processsQueryRemeberBigAction">
+			<result name="success" type="dispatcher">/chinese/about/big.jsp</result>
+		</action>
+		
+		<!--厂区环境 -->
+		<action name="queryFactoryEnvironment" class="com.newhc.web.action.RemeberTheBigWebAction" method="processsFactoryEnvironmentAction">
+			<result name="success" type="dispatcher">/chinese/about/environment.jsp</result>
+		</action>
+		<!--厂区环境详细 -->
+		<action name="queryFactoryEnvironmentDetail" class="com.newhc.web.action.RemeberTheBigWebAction" method="processsFactoryEnvironmentDetailAction">
+			<result name="success" type="dispatcher">/chinese/about/environment_detail.jsp</result>
+		</action>
+		<!--联系方式 -->
+		<action name="queryContact" class="com.newhc.web.action.RemeberTheBigWebAction" method="processsContactAction">
+			<result name="success" type="dispatcher">/chinese/about/contact.jsp</result>
+		</action>
+		
+		<!-- 招聘管理  权利与义务 -->
+		<action name="queryEmployess" class="com.newhc.web.action.EmployessWebAction" method="processEmployessWebAction">
+			<result name="success" type="dispatcher">/chinese/job/power.jsp</result>
+		</action>
+		<!-- 招聘管理 薪酬与福利 -->
+		<action name="queryXinc" class="com.newhc.web.action.EmployessWebAction" method="processXincWebAction">
+			<result name="success" type="dispatcher">/chinese/job/xinc.jsp</result>
+		</action>
+		<!-- 招聘管理 人力资源策略-->
+		<action name="queryRenl" class="com.newhc.web.action.EmployessWebAction" method="processRenlWebAction">
+			<result name="success" type="dispatcher">/chinese/job/benefits.jsp</result>
+		</action>
+		<!-- 招聘管理 招聘信息-->
+		<action name="queryZhaop" class="com.newhc.web.action.EmployessWebAction" method="processZhaopWebAction">
+			<result name="success" type="dispatcher">/chinese/job/info.jsp</result>
+		</action>
+		<!-- 招聘管理 招工信息-->
+		<action name="queryRecruit" class="com.newhc.web.action.EmployessWebAction" method="processRecruitWebAction">
+			<result name="success" type="dispatcher">/chinese/job/recruit.jsp</result>
+		</action>
+		
+		<!-- 招聘管理 招聘详细-->
+		<action name="queryAdvertiseDetail" class="com.newhc.web.action.EmployessWebAction" method="processAdvertiseDetalWebAction">
+			<result name="success" type="dispatcher">/chinese/job/jobdetail.jsp</result>
+		</action>
+		<!-- 准备应聘-->
+		<action name="parperApplyfor" class="com.newhc.web.action.EmployessWebAction" method="processParperApplyforWebAction">
+    		<result name="success" type="dispatcher">/chinese/job/resume.jsp</result>
+    		<interceptor-ref name="chainStack"/>
+    	</action>
+    	<action name="addModelApplyfor" class="com.newhc.web.action.EmployessWebAction" method="processAddApplyforWebAction">
+    		<result name="input" type="chain"><param name="actionName">parperApplyfor</param></result>
+            <result name="success" type="chain"><param name="actionName">parperApplyfor</param></result>
+            <interceptor-ref name="fileUploadStack"/>
+    	</action>
+    	<!-- 查看应聘 -->
+		<!-- 下载应聘表 -->
+		<action name="downloadAdvertise" class="com.newhc.web.action.EmployessWebAction" method="processDownloadFiles">
+			<result name="success" type="print"></result>
+		</action>
+		
+		<!-- 产品与客户 -->
+		<action name="queryProduct" class="com.newhc.web.action.ProductsCustomerAction" method="processProductsCustomerWebAction">
+			<result name="success" type="dispatcher">/chinese/products/index.jsp</result>
+		</action>
+		<action name="querySpeciaIndex" class="com.newhc.web.action.ProductsCustomerAction" method="processProductsCustomerWebAction">
+			<result name="success" type="dispatcher">/chinese/products/specialIndex.jsp</result>
+		</action>
+		<action name="queryPottypeIndex" class="com.newhc.web.action.ProductsCustomerAction" method="processProductsCustomerWebAction">
+			<result name="success" type="dispatcher">/chinese/products/pottypeIndex.jsp</result>
+		</action>
+		<action name="queryPottypeDetail" class="com.newhc.web.action.ProductsCustomerAction" method="processProductsWebAction">
+			<result name="success" type="dispatcher">/chinese/products/pottypeDetail.jsp</result>
+		</action>
+		<action name="querySpeciaDetail" class="com.newhc.web.action.ProductsCustomerAction" method="processProductsWebAction">
+			<result name="success" type="dispatcher">/chinese/products/specialDetail.jsp</result>
+		</action>
+		<action name="queryProductById" class="com.newhc.web.action.ProductsCustomerAction" method="processProductsWebAction">
+			<result name="success" type="dispatcher">/chinese/products/detail.jsp</result>
+		</action>
+		<action name="queryCategoryById" class="com.newhc.web.action.ProductsCustomerAction" method="processCategoryWebAction">
+			<result name="success" type="dispatcher">/chinese/products/shipping.jsp</result>
+		</action>
+		<action name="queryRentalBox" class="com.newhc.web.action.ProductsCustomerAction" method="processCategoryWebAction">
+			<result name="success" type="dispatcher">/chinese/products/rentalbox.jsp</result>
+		</action>
+		<action name="queryOther" class="com.newhc.web.action.ProductsCustomerAction" method="processCategoryWebAction">
+			<result name="success" type="dispatcher">/chinese/products/other.jsp</result>
+		</action>
+		<action name="queryBox" class="com.newhc.web.action.ProductsCustomerAction" method="processCategoryWebAction">
+			<result name="success" type="dispatcher">/chinese/products/box.jsp</result>
+		</action>
+		 <!-- 电子期刊 -->
+		<action name="queryEjournals" class="com.newhc.web.action.CultureWebAction" method="processEjournalsWebAction">
+			<result name="success" type="dispatcher">/chinese/culture/ejournals.jsp</result>
+		</action>
+		 <!-- 电子期刊内容 -->
+		<action name="queryEjournalsDetail" class="com.newhc.web.action.CultureWebAction" method="processEjournalsDetailWebAction">
+			<result name="success" type="dispatcher">/chinese/culture/ejournals_detail.jsp</result>
+		</action>
+		 <!--辅助栏目 -->
+		  <action name="queryAid" class="com.newhc.web.action.AidWebAction" method="processAidWebAction">
+			<result name="success" type="dispatcher">/chinese/aid/index.jsp</result>
+		</action>
+		 <!-- 电子画册类型-->
+		<action name="queryAlbumType" class="com.newhc.web.action.CultureWebAction" method="processAlbumTypeWebAction">
+			<result name="success" type="dispatcher">/chinese/album/index.jsp</result>
+		</action>
+		 <!-- 电子画册 -->
+		<action name="queryAlbum" class="com.newhc.web.action.CultureWebAction" method="processAlbumWebAction">
+			<result name="success" type="dispatcher">/chinese/album/dianzi.jsp</result>
+		</action>
+	</package>
+</xwork>

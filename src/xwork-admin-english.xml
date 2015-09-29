@@ -1,0 +1,900 @@
+<!DOCTYPE xwork
+    PUBLIC "-//OpenSymphony Group//XWork 1.0//EN"
+    "http://www.opensymphony.com/xwork/xwork-1.0.dtd">
+
+<xwork>    
+    <!-- ============================== ACTION ======================================= -->  
+	<package name="adminenglish" extends="default" namespace="/admin">
+		 
+		 	<!-- 栏目图片管理 -->
+		<action name="modelColumnImageEnPage" class="com.newhc.admin.action.user.en.ModelColumnImageEnAction" method="processModelColumnImagePageEnAction">
+    		<result name="success" type="dispatcher">/admin/english/modelColumnImagePageEn.jsp</result>
+    	</action>
+    	<action name="auditModelColumnImageEn" class="com.newhc.admin.action.user.en.ModelColumnImageEnAction" method="processAuditModelColumnImageEnAction">
+    		<result name="success" type="print"></result>
+    	</action>
+    	<action name="reAuditModelColumnImageEn" class="com.newhc.admin.action.user.en.ModelColumnImageEnAction" method="processReAuditModelColumnImageEnAction">
+    		<result name="success" type="print"></result>
+    	</action>
+    	<action name="auditAllModelColumnImageEn" class="com.newhc.admin.action.user.en.ModelColumnImageEnAction" method="processAuditAllModelColumnImageEnAction">
+			<result name="success" type="print"></result>
+		</action>
+		<action name="reAuditAllModelColumnImageEn" class="com.newhc.admin.action.user.en.ModelColumnImageEnAction" method="processReAuditAllModelColumnImageEnAction">
+			<result name="success" type="print"></result>
+		</action>
+		<action name="deleteModelColumnImageEn" class="com.newhc.admin.action.user.en.ModelColumnImageEnAction" method="processDeleteModelColumnImageEnAction">
+    		<result name="success" type="print"></result>
+    	</action>
+    	<action name="prepareAddModelColumnImageEn" class="com.newhc.admin.action.user.en.ModelColumnImageEnAction" method="processPrepareAddModelColumnImageEnAction">
+    		<result name="success" type="dispatcher">/admin/english/addModelColumnImageEn.jsp</result>
+    		<interceptor-ref name="chainStack"/>
+    	</action>
+    	<action name="addModelColumnImageEn" class="com.newhc.admin.action.user.en.ModelColumnImageEnAction" method="processAddModelColumnImageEnAction">
+    		<result name="input" type="chain"><param name="actionName">prepareAddModelColumnImageEn</param></result>
+            <result name="success" type="chain"><param name="actionName">prepareAddModelColumnImageEn</param></result>
+            <interceptor-ref name="fileUploadStack"/>
+    	</action>
+    	<action name="prepareUpdateModelColumnImageEn" class="com.newhc.admin.action.user.en.ModelColumnImageEnAction" method="processPrepareUpdateModelColumnImageEnAction">
+    		<result name="success" type="dispatcher">/admin/english/updateModelColumnImageEn.jsp</result>
+    		<interceptor-ref name="chainStack"></interceptor-ref>
+    	</action>
+    	<action name="updateModelColumnImageEn" class="com.newhc.admin.action.user.en.ModelColumnImageEnAction" method="processUpdateModelColumnImageEnAction">
+    		<result name="input" type="chain"><param name="actionName">prepareUpdateModelColumnImageEn</param></result>
+            <result name="success" type="chain"><param name="actionName">prepareUpdateModelColumnImageEn</param></result>
+            <interceptor-ref name="validationWorkflowStack"/>
+    	</action>
+		<!-- 新闻发布管理 -->
+		<action name="modelNewsCenterEnPage" class="com.newhc.admin.action.user.en.ModelNewsCenterEnAction" method="processModelNewsCenterPageEnAction">
+    		<result name="success" type="dispatcher">/admin/english/modelNewsCenterPageEn.jsp</result>
+    	</action>
+		<action name="auditModelNewsCenterEn" class="com.newhc.admin.action.user.en.ModelNewsCenterEnAction" method="processAuditModelNewsCenterEnAction">
+    		<result name="success" type="print"></result>
+    	</action>
+    	<action name="reAuditModelNewsCenterEn" class="com.newhc.admin.action.user.en.ModelNewsCenterEnAction" method="processReAuditModelNewsCenterEnAction">
+    		<result name="success" type="print"></result>
+    	</action>
+    	<action name="auditAllModelNewsCenterEn" class="com.newhc.admin.action.user.en.ModelNewsCenterEnAction" method="processAuditAllModelNewsCenterEnAction">
+			<result name="success" type="print"></result>
+		</action>
+		<action name="reAuditAllModelNewsCenterEn" class="com.newhc.admin.action.user.en.ModelNewsCenterEnAction" method="processReAuditAllModelNewsCenterEnAction">
+			<result name="success" type="print"></result>
+		</action>
+    	<action name="deleteModelNewsCenterEn" class="com.newhc.admin.action.user.en.ModelNewsCenterEnAction" method="processDeleteModelNewsCenterEnAction">
+    		<result name="success" type="print"></result>
+    	</action>
+    	<action name="prepareAddModelNewsCenterEn" class="com.newhc.admin.action.user.en.ModelNewsCenterEnAction" method="processPrepareAddModelNewsCenterEnAction">
+    		<result name="success" type="dispatcher">/admin/english/addModelNewsCenterEn.jsp</result>
+    		<interceptor-ref name="chainStack"></interceptor-ref>
+    	</action>
+    	<action name="addModelNewsCenterEn" class="com.newhc.admin.action.user.en.ModelNewsCenterEnAction" method="processAddModelNewsCenterEnAction">
+    		<result name="input" type="chain"><param name="actionName">prepareAddModelNewsCenterEn</param></result>
+            <result name="success" type="chain"><param name="actionName">prepareAddModelNewsCenterEn</param></result>
+            <interceptor-ref name="validationWorkflowStack"/>
+    	</action>
+    	<action name="prepareUpdateModelNewsCenterEn" class="com.newhc.admin.action.user.en.ModelNewsCenterEnAction" method="processPrepareUpdateModelNewsCenterEnAction">
+    		<result name="success" type="dispatcher">/admin/english/updateModelNewsCenterEn.jsp</result>
+    		<interceptor-ref name="chainStack"></interceptor-ref>
+    	</action>
+    	<action name="updateModelNewsCenterEn" class="com.newhc.admin.action.user.en.ModelNewsCenterEnAction" method="processUpdateModelNewsCenterEnAction">
+    		<result name="input" type="chain"><param name="actionName">prepareUpdateModelNewsCenterEn</param></result>
+            <result name="success" type="chain"><param name="actionName">prepareUpdateModelNewsCenterEn</param></result>
+            <interceptor-ref name="validationWorkflowStack"/>
+    	</action>
+    
+		<action name="deleteAllModelNewsCenterEn" class="com.newhc.admin.action.user.en.ModelNewsEnAction" method="processDeleteAllModelNewsEnAction">
+			<result name="success" type="print"></result>
+		</action>
+    	
+    	
+    	
+    	<action name="modelNewsPageEn" class="com.newhc.admin.action.user.en.ModelNewsEnAction" method="processModelNewsPageEnAction">
+    		<result name="success" type="dispatcher">/admin/english/modelNewsPageEn.jsp</result>
+    	</action>
+    	<action name="auditModelNewsEn" class="com.newhc.admin.action.user.en.ModelNewsEnAction" method="processAuditModelNewsEnAction">
+    		<result name="success" type="print"></result>
+    	</action>
+    	<action name="reAuditModelNewsEn" class="com.newhc.admin.action.user.en.ModelNewsEnAction" method="processReAuditModelNewsEnAction">
+    		<result name="success" type="print"></result>
+    	</action>
+    	<action name="deleteModelNewsEn" class="com.newhc.admin.action.user.en.ModelNewsEnAction" method="processDeleteModelNewsEnAction">
+    		<result name="success" type="print"></result>
+    	</action>
+    	<action name="prepareAddModelNewsEn" class="com.newhc.admin.action.user.en.ModelNewsEnAction" method="processPrepareAddModelNewsEnAction">
+    		<result name="success" type="dispatcher">/admin/english/addModelNewsEn.jsp</result>
+    		<interceptor-ref name="chainStack"></interceptor-ref>
+    	</action>
+    	<action name="addModelNewsEn" class="com.newhc.admin.action.user.en.ModelNewsEnAction" method="processAddModelNewsEnAction">
+    		<result name="input" type="chain"><param name="actionName">prepareAddModelNewsEn</param></result>
+            <result name="success" type="chain"><param name="actionName">prepareAddModelNewsEn</param></result>
+            <interceptor-ref name="validationWorkflowStack"/>
+    	</action>
+    	<action name="prepareUpdateModelNewsEn" class="com.newhc.admin.action.user.en.ModelNewsEnAction" method="processPrepareUpdateModelNewsEnAction">
+    		<result name="success" type="dispatcher">/admin/english/updateModelNewsEn.jsp</result>
+    		<interceptor-ref name="chainStack"></interceptor-ref>
+    	</action>
+    	<action name="updateModelNewsEn" class="com.newhc.admin.action.user.en.ModelNewsEnAction" method="processUpdateModelNewsEnAction">
+    		<result name="input" type="chain"><param name="actionName">prepareUpdateModelNewsEn</param></result>
+            <result name="success" type="chain"><param name="actionName">prepareUpdateModelNewsEn</param></result>
+            <interceptor-ref name="validationWorkflowStack"/>
+    	</action>
+    	<action name="auditAllModelNewsEn" class="com.newhc.admin.action.user.en.ModelNewsEnAction" method="processAuditAllModelNewsEnAction">
+			<result name="success" type="print"></result>
+		</action>
+		<action name="reAuditAllModelNewsEn" class="com.newhc.admin.action.user.en.ModelNewsEnAction" method="processReAuditAllModelNewsEnAction">
+			<result name="success" type="print"></result>
+		</action>
+		<action name="deleteAllModelNewsEn" class="com.newhc.admin.action.user.en.ModelNewsEnAction" method="processDeleteAllModelNewsEnAction">
+			<result name="success" type="print"></result>
+		</action> 
+    	
+    	  <!-- 简介-大记事 -->
+        <action name="modelRemeberTheBigEnPage" class="com.newhc.admin.action.user.en.ModelRemeberTheBigEnAction" method="processsModelRemeberTheBigEnAction">
+    		<result name="success" type="dispatcher">/admin/english/modelRemeberTheBigPageEn.jsp</result>
+    	</action>
+    	<action name="auditModelRemeberTheBigEn" class="com.newhc.admin.action.user.en.ModelRemeberTheBigEnAction" method="processAuditModelRemeberTheBigEnAction">
+    		<result name="success" type="print"></result>
+    	</action>
+    	<action name="reAuditModelRemeberTheBigEn" class="com.newhc.admin.action.user.en.ModelRemeberTheBigEnAction" method="processReAuditModelRemeberTheBigEnAction">
+    		<result name="success" type="print"></result>
+    	</action>
+    	<action name="auditAllModelRemeberTheBigEn" class="com.newhc.admin.action.user.en.ModelRemeberTheBigEnAction" method="processAuditAllModelRemeberTheBigEnAction">
+			<result name="success" type="print"></result>
+		</action>
+		<action name="reAuditAllModelRemeberTheBigEn" class="com.newhc.admin.action.user.en.ModelRemeberTheBigEnAction" method="processReAuditAllModelRemeberTheBigEnAction">
+			<result name="success" type="print"></result>
+		</action>
+		<action name="deleteModelRemeberTheBigEn" class="com.newhc.admin.action.user.en.ModelRemeberTheBigEnAction" method="processDeleteModelRemeberTheBigEnAction">
+    		<result name="success" type="print"></result>
+    	</action>
+    	<action name="deleteAllModelRemeberTheBigEn" class="com.newhc.admin.action.user.en.ModelRemeberTheBigEnAction" method="processDeleteAllModelRemeberTheBigEnAction">
+    		<result name="success" type="print"></result>
+    	</action>
+    	<action name="prepareAddModelRemeberTheBigEn" class="com.newhc.admin.action.user.en.ModelRemeberTheBigEnAction" method="processPrepareAddModelRemeberTheBigEnAction">
+    		<result name="success" type="dispatcher">/admin/english/addModelRemeberTheBigPageEn.jsp</result>
+    		<interceptor-ref name="chainStack"></interceptor-ref>
+    	</action>
+    	<action name="addModelRemeberTheBigEn" class="com.newhc.admin.action.user.en.ModelRemeberTheBigEnAction" method="processAddModelRemeberTheBigEnAction">
+    		<result name="input" type="chain"><param name="actionName">prepareAddModelRemeberTheBigEn</param></result>
+            <result name="success" type="chain"><param name="actionName">prepareAddModelRemeberTheBigEn</param></result>
+            <interceptor-ref name="validationWorkflowStack"/>
+    	</action>
+    	<action name="prepareUpdateModelRemeberTheBigEn" class="com.newhc.admin.action.user.en.ModelRemeberTheBigEnAction" method="processPrepareUpadteModelRemeberTheBigEnAction">
+    		<result name="success" type="dispatcher">/admin/english/updateModelRemeberTheBigPageEn.jsp</result>
+    		<interceptor-ref name="chainStack"></interceptor-ref>
+    	</action>
+    	<action name="updateModelRemeberTheBigEn" class="com.newhc.admin.action.user.en.ModelRemeberTheBigEnAction" method="processUpadteModelRemeberTheBigEnAction">
+    		<result name="input" type="chain"><param name="actionName">prepareUpdateModelRemeberTheBigEn</param></result>
+            <result name="success" type="chain"><param name="actionName">prepareUpdateModelRemeberTheBigEn</param></result>
+            <interceptor-ref name="validationWorkflowStack"/>
+    	</action>
+
+    	<!-- 简介-成员企业 -->
+        <action name="modelEnterprisesEnPage" class="com.newhc.admin.action.user.en.ModelEnterprisesEnAction" method="processsModelEnterprisesEnAction">
+    		<result name="success" type="dispatcher">/admin/english/modelEnterprisesPageEn.jsp</result>
+    	</action>
+    	<action name="auditModelEnterprisesEn" class="com.newhc.admin.action.user.en.ModelEnterprisesEnAction" method="processAuditModelEnterprisesEnAction">
+    		<result name="success" type="print"></result>
+    	</action>
+    	<action name="reAuditModelEnterprisesEn" class="com.newhc.admin.action.user.en.ModelEnterprisesEnAction" method="processReAuditModelEnterprisesEnAction">
+    		<result name="success" type="print"></result>
+    	</action>
+    	<action name="auditAllModelEnterprisesEn" class="com.newhc.admin.action.user.en.ModelEnterprisesEnAction" method="processAuditAllModelEnterprisesEnAction">
+			<result name="success" type="print"></result>
+		</action>
+		<action name="reAuditAllModelEnterprisesEn" class="com.newhc.admin.action.user.en.ModelEnterprisesEnAction" method="processReAuditAllModelEnterprisesEnAction">
+			<result name="success" type="print"></result>
+		</action>
+		<action name="deleteModelEnterprisesEn" class="com.newhc.admin.action.user.en.ModelEnterprisesEnAction" method="processDeleteModelEnterprisesEnAction">
+    		<result name="success" type="print"></result>
+    	</action>
+    	<action name="deleteAllModelEnterprisesEn" class="com.newhc.admin.action.user.en.ModelEnterprisesEnAction" method="processDeleteAllModelEnterprisesEnAction">
+    		<result name="success" type="print"></result>
+    	</action>
+    	<action name="prepareAddModelEnterprisesEn" class="com.newhc.admin.action.user.en.ModelEnterprisesEnAction" method="processPrepareAddModelEnterprisesEnAction">
+    		<result name="success" type="dispatcher">/admin/english/addModelEnterprisesEn.jsp</result>
+    		<interceptor-ref name="chainStack"></interceptor-ref>
+    	</action>
+    	<action name="addModelEnterprisesEn" class="com.newhc.admin.action.user.en.ModelEnterprisesEnAction" method="processAddModelEnterprisesEnAction">
+    		<result name="input" type="chain"><param name="actionName">prepareAddModelEnterprisesEn</param></result>
+            <result name="success" type="chain"><param name="actionName">prepareAddModelEnterprisesEn</param></result>
+            <interceptor-ref name="validationWorkflowStack"/>
+    	</action>
+    	<action name="prepareUpdateModelEnterprisesEn" class="com.newhc.admin.action.user.en.ModelEnterprisesEnAction" method="processPrepareUpadteModelEnterprisesEnAction">
+    		<result name="success" type="dispatcher">/admin/english/updateModelEnterprisesEn.jsp</result>
+    		<interceptor-ref name="chainStack"></interceptor-ref>
+    	</action>
+    	<action name="updateModelEnterprisesEn" class="com.newhc.admin.action.user.en.ModelEnterprisesEnAction" method="processUpadteModelEnterprisesEnAction">
+    		<result name="input" type="chain"><param name="actionName">prepareUpdateModelEnterprisesEn</param></result>
+            <result name="success" type="chain"><param name="actionName">prepareUpdateModelEnterprisesEn</param></result>
+            <interceptor-ref name="validationWorkflowStack"/>
+    	</action>
+    	
+    	
+    
+
+		<!-- 产品管理 -->
+		<action name="modelProductCategoryEnPage" class="com.newhc.admin.action.user.en.ModelProductCategoryEnAction" method="processModelProductCategoryPageEnAction">
+    		<result name="success" type="dispatcher">/admin/english/modelProductCategoryPageEn.jsp</result>
+    	</action>
+    	<action name="prepareAddModelProductCategoryEn" class="com.newhc.admin.action.user.en.ModelProductCategoryEnAction" method="processPrepareAddModelProductCategoryEnAction">
+    		<result name="success" type="dispatcher">/admin/english/addModelProductCategoryEn.jsp</result>
+    		<interceptor-ref name="chainStack"></interceptor-ref>
+    	</action>
+    	<action name="addModelProductCategoryEn" class="com.newhc.admin.action.user.en.ModelProductCategoryEnAction" method="processAddModelProductCategoryEnAction">
+    		<result name="input" type="chain"><param name="actionName">prepareAddModelProductCategoryEn</param></result>
+            <result name="success" type="chain"><param name="actionName">prepareAddModelProductCategoryEn</param></result>
+            <interceptor-ref name="validationWorkflowStack"/>
+    	</action>
+    	<action name="prepareUpdateModelProductCategoryEn" class="com.newhc.admin.action.user.en.ModelProductCategoryEnAction" method="processPrepareUpdateModelProductCategoryEnAction">
+    		<result name="success" type="dispatcher">/admin/english/updateModelProductCategoryEn.jsp</result>
+    		<interceptor-ref name="chainStack"></interceptor-ref>
+    	</action>
+    	<action name="updateModelProductCategoryEn" class="com.newhc.admin.action.user.en.ModelProductCategoryEnAction" method="processUpdateModelProductCategoryEnAction">
+    		<result name="input" type="chain"><param name="actionName">prepareUpdateModelProductCategoryEn</param></result>
+            <result name="success" type="chain"><param name="actionName">prepareUpdateModelProductCategoryEn</param></result>
+            <interceptor-ref name="validationWorkflowStack"/>
+    	</action>
+    	<action name="auditModelProductCategoryEn" class="com.newhc.admin.action.user.en.ModelProductCategoryEnAction" method="processAuditModelProductCategoryEnAction">
+    		<result name="success" type="print"></result>
+    	</action>
+    	<action name="reAuditModelProductCategoryEn" class="com.newhc.admin.action.user.en.ModelProductCategoryEnAction" method="processReAuditModelProductCategoryEnAction">
+    		<result name="success" type="print"></result>
+    	</action>
+    	<action name="auditAllModelProductCategoryEn" class="com.newhc.admin.action.user.en.ModelProductCategoryEnAction" method="processAuditAllModelProductCategoryEnAction">
+			<result name="success" type="print"></result>
+		</action>
+		<action name="reAuditAllModelProductCategoryEn" class="com.newhc.admin.action.user.en.ModelProductCategoryEnAction" method="processReAuditAllModelProductCategoryEnAction">
+			<result name="success" type="print"></result>
+		</action>
+		<action name="deleteModelProductCategoryEn" class="com.newhc.admin.action.user.en.ModelProductCategoryEnAction" method="processDeleteModelProductCategoryEnAction">
+    		<result name="success" type="print"></result>
+    	</action>
+    	<action name="modelProductEnPage" class="com.newhc.admin.action.user.en.ModelProductCategoryEnAction" method="processModelProductPageEnAction">
+    		<result name="success" type="dispatcher">/admin/english/modelProductPageEn.jsp</result>
+    	</action>
+    	<action name="prepareAddModelProductEn" class="com.newhc.admin.action.user.en.ModelProductCategoryEnAction" method="processPrepareAddModelProductEnAction">
+    		<result name="success" type="dispatcher">/admin/english/addModelProductEn.jsp</result>
+    		<interceptor-ref name="chainStack"></interceptor-ref>
+    	</action>
+    	<action name="addModelProductEn" class="com.newhc.admin.action.user.en.ModelProductCategoryEnAction" method="processAddModelProductEnAction">
+    		<result name="input" type="chain"><param name="actionName">prepareAddModelProductEn</param></result>
+            <result name="success" type="chain"><param name="actionName">prepareAddModelProductEn</param></result>
+            <interceptor-ref name="validationWorkflowStack"/>
+    	</action>
+    	<action name="prepareUpdateModelProductEn" class="com.newhc.admin.action.user.en.ModelProductCategoryEnAction" method="processPrepareUpdateModelProductEnAction">
+    		<result name="success" type="dispatcher">/admin/english/updateModelProductEn.jsp</result>
+    		<interceptor-ref name="chainStack"></interceptor-ref>
+    	</action>
+    	<action name="updateModelProductEn" class="com.newhc.admin.action.user.en.ModelProductCategoryEnAction" method="processUpdateModelProductEnAction">
+    		<result name="input" type="chain"><param name="actionName">prepareUpdateModelProductEn</param></result>
+            <result name="success" type="chain"><param name="actionName">prepareUpdateModelProductEn</param></result>
+            <interceptor-ref name="validationWorkflowStack"/>
+    	</action>
+    	<action name="auditModelProductEn" class="com.newhc.admin.action.user.en.ModelProductCategoryEnAction" method="processAuditModelProductEnAction">
+    		<result name="success" type="print"></result>
+    	</action>
+    	<action name="reAuditModelProductEn" class="com.newhc.admin.action.user.en.ModelProductCategoryEnAction" method="processReAuditModelProductEnAction">
+    		<result name="success" type="print"></result>
+    	</action>
+    	<action name="auditAllModelProductEn" class="com.newhc.admin.action.user.en.ModelProductCategoryEnAction" method="processAuditAllModelProductEnAction">
+			<result name="success" type="print"></result>
+		</action>
+		<action name="reAuditAllModelProductEn" class="com.newhc.admin.action.user.en.ModelProductCategoryEnAction" method="processReAuditAllModelProductEnAction">
+			<result name="success" type="print"></result>
+		</action>
+		<action name="deleteModelProductEn" class="com.newhc.admin.action.user.en.ModelProductCategoryEnAction" method="processDeleteModelProductEnAction">
+    		<result name="success" type="print"></result>
+    	</action>
+    	<action name="deleteAllModelProductEn" class="com.newhc.admin.action.user.en.ModelProductCategoryEnAction" method="processDeleteAllModelProductEnAction">
+			<result name="success" type="print"></result>
+		</action>
+								<!-- 产品历史 -->
+		<action name="modelProductHistoryEnPage" class="com.newhc.admin.action.user.en.ModelProductCategoryEnAction" method="processModelProductHistoryPageEnAction">
+    		<result name="success" type="dispatcher">/admin/english/modelProductHistoryPageEn.jsp</result>
+    	</action>
+    	<action name="recoveryModelProductHistoryEn" class="com.newhc.admin.action.user.en.ModelProductCategoryEnAction" method="processRecoveryModelProductHistoryEnAction">
+    		<result name="success" type="print"></result>
+    	</action>
+    	<action name="queryModelProductHistoryEn" class="com.newhc.admin.action.user.en.ModelProductCategoryEnAction" method="processQueryModelProductHistoryEnAction">
+    		<result name="success" type="dispatcher">/admin/english/queryModelProductHistoryEn.jsp</result>
+    	</action>
+    	<action name="deleteModelProductHistoryEn" class="com.newhc.admin.action.user.en.ModelProductCategoryEnAction" method="processDeleteModelProductHistoryEnAction">
+    		<result name="success" type="print"></result>
+    	</action>
+    	
+    	<action name="deleteAllModelProductHistoryEn" class="com.newhc.admin.action.user.en.ModelProductCategoryEnAction" method="processDeleteAllModelProductHistoryEnAction">
+			<result name="success" type="print"></result>
+		</action>
+	
+    	<!-- 友情链接管理 -->
+    	<action name="modelLinkEnPage" class="com.newhc.admin.action.user.en.ModelLinkEnAction" method="processModelLinkPageEnAction">
+    		<result name="success" type="dispatcher">/admin/english/modelLinkPageEn.jsp</result>
+    	</action>
+    	<action name="prepareAddModelLinkEn" class="com.newhc.admin.action.user.en.ModelLinkEnAction" method="processPrepareAddModelLinkEnAction">
+    		<result name="success" type="dispatcher">/admin/english/addModelLinkEn.jsp</result>
+    		<interceptor-ref name="chainStack"/>
+    	</action>
+    	<action name="addModelLinkEn" class="com.newhc.admin.action.user.en.ModelLinkEnAction" method="processAddModelLinkEnAction">
+    		<result name="input" type="chain"><param name="actionName">prepareAddModelLinkEn</param></result>
+            <result name="success" type="chain"><param name="actionName">prepareAddModelLinkEn</param></result>
+            <interceptor-ref name="fileUploadStack"/>
+    	</action>
+    	<action name="auditModelLinkEn" class="com.newhc.admin.action.user.en.ModelLinkEnAction" method="processAuditModelLinkEnAction">
+    		<result name="success" type="print"></result>
+    	</action>
+    	<action name="reAuditModelLinkEn" class="com.newhc.admin.action.user.en.ModelLinkEnAction" method="processReAuditModelLinkEnAction">
+    		<result name="success" type="print"></result>
+    	</action>
+    	<action name="deleteModelLinkEn" class="com.newhc.admin.action.user.en.ModelLinkEnAction" method="processDeleteModelLinkEnAction">
+    		<result name="success" type="print"></result>
+    	</action>
+    	<action name="updateAllModelLinkEn" class="com.newhc.admin.action.user.en.ModelLinkEnAction" method="processUpdateAllModelLinkEnAction">
+    		<result name="success" type="print"></result>
+    	</action>
+    	<action name="reUpdateAllModelLinkEn" class="com.newhc.admin.action.user.en.ModelLinkEnAction" method="processReUpdateAllModelLinkEnAction">
+    		<result name="success" type="print"></result>
+    	</action>
+    	<action name="deleteAllModelLinkEn" class="com.newhc.admin.action.user.en.ModelLinkEnAction" method="processDeleteAllModelLinkEnAction">
+    		<result name="success" type="print"></result>
+    	</action>
+    	<action name="prepareUpdateModelLinkEn" class="com.newhc.admin.action.user.en.ModelLinkEnAction" method="processPrepareUpdateModelLinkEnAction">
+    		<result name="success" type="dispatcher">/admin/english/updateModelLinkEn.jsp</result>
+    		<interceptor-ref name="chainStack"/>
+    	</action>
+    	<action name="updateModelLinkEn" class="com.newhc.admin.action.user.en.ModelLinkEnAction" method="processUpdateModelLinkEnAction">
+    		<result name="input" type="chain"><param name="actionName">prepareUpdateModelLinkEn</param></result>
+            <result name="success" type="chain"><param name="actionName">prepareUpdateModelLinkEn</param></result>
+            <interceptor-ref name="fileUploadStack"/>
+    	</action>
+    	<!-- 联系我们管理 -->
+    	<action name="viewModelContactEn" class="com.newhc.admin.action.user.en.ModelContactEnAction" method="processViewModelContactEnAction">
+    		<result name="success" type="dispatcher">/admin/english/viewModelContactEn.jsp</result>
+    		<interceptor-ref name="chainStack"/>
+    	</action>
+    	<action name="updateModelContactEn" class="com.newhc.admin.action.user.en.ModelContactEnAction" method="processUpdateModelContactEnAction">
+    		<result name="input" type="chain"><param name="actionName">viewModelContactEn</param></result>
+            <result name="success" type="chain"><param name="actionName">viewModelContactEn</param></result>
+            <interceptor-ref name="validationWorkflowStack"/>
+    	</action>
+    	
+		<!-- 招聘信息列表管理 -->
+    	<action name="modelAdvertiseEnPage" class="com.newhc.admin.action.user.en.ModelAdvertiseEnAction" method="processModelAdvertisePageEnAction">
+    		<result name="success" type="dispatcher">/admin/english/modelAdvertisePageEn.jsp</result>
+    		<interceptor-ref name="chainStack"/>
+    	</action>
+    	<action name="auditModelAdvertiseEn" class="com.newhc.admin.action.user.en.ModelAdvertiseEnAction" method="processAuditModelAdvertiseEnAction">
+    		<result name="success" type="print"></result>
+    	</action>
+    	<action name="reAuditModelAdvertiseEn" class="com.newhc.admin.action.user.en.ModelAdvertiseEnAction" method="processReAuditModelAdvertiseEnAction">
+    		<result name="success" type="print"></result>
+    	</action>
+    	<action name="queryModelAdvertiseEn" class="com.newhc.admin.action.user.en.ModelAdvertiseEnAction" method="processQueryModelAdvertiseEnAction">
+    		<result name="success" type="dispatcher">/admin/english/queryModelAdvertiseEn.jsp</result>
+    	</action>
+    	<action name="prepareAddModelAdvertiseEn" class="com.newhc.admin.action.user.en.ModelAdvertiseEnAction" method="processPrepareAddModelAdvertiseEnAction">
+    		<result name="success" type="dispatcher">/admin/english/addModelAdvertiseEn.jsp</result>
+    		<interceptor-ref name="chainStack"/>
+    	</action>
+    	<action name="addModelAdvertiseEn" class="com.newhc.admin.action.user.en.ModelAdvertiseEnAction" method="processAddModelAdvertiseEnAction">
+    		<result name="input" type="chain"><param name="actionName">prepareAddModelAdvertiseEn</param></result>
+            <result name="success" type="chain"><param name="actionName">prepareAddModelAdvertiseEn</param></result>
+            <interceptor-ref name="validationWorkflowStack"/>
+    	</action>
+    	<action name="prepareUpdateModelAdvertiseEn" class="com.newhc.admin.action.user.en.ModelAdvertiseEnAction" method="processPrepareUpdateModelAdvertiseEnAction">
+    		<result name="success" type="dispatcher">/admin/english/updateModelAdvertiseEn.jsp</result>
+    		<interceptor-ref name="chainStack"/>
+    	</action>
+    	<action name="updateModelAdvertiseEn" class="com.newhc.admin.action.user.en.ModelAdvertiseEnAction" method="processUpdateModelAdvertiseEnAction">
+    		<result name="input" type="chain"><param name="actionName">prepareUpdateModelAdvertiseEn</param></result>
+            <result name="success" type="chain"><param name="actionName">prepareUpdateModelAdvertiseEn</param></result>
+            <interceptor-ref name="validationWorkflowStack"/>
+    	</action>
+    	<action name="deleteModelAdvertiseEn" class="com.newhc.admin.action.user.en.ModelAdvertiseEnAction" method="processDeleteModelAdvertiseEnAction">
+    		<result name="success" type="print"></result>
+    	</action>
+    	<action name="updateAllModelAdvertiseEn" class="com.newhc.admin.action.user.en.ModelAdvertiseEnAction" method="processUpdateAllModelAdvertiseEnAction">
+			<result name="success" type="print"></result>
+		</action>
+  		<action name="deleteAllModelAdvertiseEn" class="com.newhc.admin.action.user.en.ModelAdvertiseEnAction" method="processDeleteAllModelAdvertiseEnAction">
+  			<result name="success" type="print"></result>
+  		</action>
+  		<action name="reUpdateAllModelAdvertiseEn" class="com.newhc.admin.action.user.en.ModelAdvertiseEnAction" method="processReUpdateAllModelAdvertiseEnAction">
+			<result name="success" type="print"></result>
+		</action>
+       
+       
+       	<!-- 招工信息列表管理 -->
+    	<action name="modelRecruitEnPage" class="com.newhc.admin.action.user.en.ModelRecruitEnAction" method="processModelRecruitPageEnAction">
+    		<result name="success" type="dispatcher">/admin/english/modelRecruitPageEn.jsp</result>
+    		<interceptor-ref name="chainStack"/>
+    	</action>
+    	<action name="auditModelRecruitEn" class="com.newhc.admin.action.user.en.ModelRecruitEnAction" method="processAuditModelRecruitEnAction">
+    		<result name="success" type="print"></result>
+    	</action>
+    	<action name="reAuditModelRecruitEn" class="com.newhc.admin.action.user.en.ModelRecruitEnAction" method="processReAuditModelRecruitEnAction">
+    		<result name="success" type="print"></result>
+    	</action>
+    	<action name="queryModelRecruitEn" class="com.newhc.admin.action.user.en.ModelRecruitEnAction" method="processQueryModelRecruitEnAction">
+    		<result name="success" type="dispatcher">/admin/english/queryModelRecruitEn.jsp</result>
+    	</action>
+    	<action name="prepareAddModelRecruitEn" class="com.newhc.admin.action.user.en.ModelRecruitEnAction" method="processPrepareAddModelRecruitEnAction">
+    		<result name="success" type="dispatcher">/admin/english/addModelRecruitEn.jsp</result>
+    		<interceptor-ref name="chainStack"/>
+    	</action>
+    	<action name="addModelRecruitEn" class="com.newhc.admin.action.user.en.ModelRecruitEnAction" method="processAddModelRecruitEnAction">
+    		<result name="input" type="chain"><param name="actionName">prepareAddModelRecruitEn</param></result>
+            <result name="success" type="chain"><param name="actionName">prepareAddModelRecruitEn</param></result>
+            <interceptor-ref name="validationWorkflowStack"/>
+    	</action>
+    	<action name="prepareUpdateModelRecruitEn" class="com.newhc.admin.action.user.en.ModelRecruitEnAction" method="processPrepareUpdateModelRecruitEnAction">
+    		<result name="success" type="dispatcher">/admin/english/updateModelRecruitEn.jsp</result>
+    		<interceptor-ref name="chainStack"/>
+    	</action>
+    	<action name="updateModelRecruitEn" class="com.newhc.admin.action.user.en.ModelRecruitEnAction" method="processUpdateModelRecruitEnAction">
+    		<result name="input" type="chain"><param name="actionName">prepareUpdateModelRecruitEn</param></result>
+            <result name="success" type="chain"><param name="actionName">prepareUpdateModelRecruitEn</param></result>
+            <interceptor-ref name="validationWorkflowStack"/>
+    	</action>
+    	<action name="deleteModelRecruitEn" class="com.newhc.admin.action.user.en.ModelRecruitEnAction" method="processDeleteModelRecruitEnAction">
+    		<result name="success" type="print"></result>
+    	</action>
+    	<action name="updateAllModelRecruitEn" class="com.newhc.admin.action.user.en.ModelRecruitEnAction" method="processUpdateAllModelRecruitEnAction">
+			<result name="success" type="print"></result>
+		</action>
+  		<action name="deleteAllModelRecruitEn" class="com.newhc.admin.action.user.en.ModelRecruitEnAction" method="processDeleteAllModelRecruitEnAction">
+  			<result name="success" type="print"></result>
+  		</action>
+  		<action name="reUpdateAllModelRecruitEn" class="com.newhc.admin.action.user.en.ModelRecruitEnAction" method="processReUpdateAllModelRecruitEnAction">
+			<result name="success" type="print"></result>
+		</action>
+       
+       
+       
+       
+        <!--企业文化管理-->
+       <action name="modelCultureEnPage" class="com.newhc.admin.action.user.en.ModelCultureEnAction" method="processModelCulturePageEnAction">
+        	<result name="success" type="dispatcher">/admin/english/modelCulturePageEn.jsp</result>
+       </action>
+       <action name="prepareAddModelCultureEn" class="com.newhc.admin.action.user.en.ModelCultureEnAction" method="processPrepareAddModelCultureEnAction">
+        	<result name="success" type="dispatcher">/admin/english/addModelCultureEn.jsp</result>
+        	<interceptor-ref name="chainStack"/>
+       </action>
+       <action name="addModelCultureEn" class="com.newhc.admin.action.user.en.ModelCultureEnAction" method="processAddModelCultureEnAction">       	
+        	<result name="input" type="chain"><param name="actionName">prepareAddModelCultureEn</param></result>
+        	<result name="success" type="chain"><param name="actionName">prepareAddModelCultureEn</param></result>
+        	<interceptor-ref name="fileUploadStack"/>
+        </action>
+        <action name="prepareUpdateModelCultureEn" class="com.newhc.admin.action.user.en.ModelCultureEnAction" method="processPrepareUpdateModelCultureEnAction">
+        	<result name="success" type="dispatcher">/admin/english/updateModelCultureEn.jsp</result>
+        	<interceptor-ref name="chainStack"/>
+        </action>
+        <action name="updateModelCultureEn" class="com.newhc.admin.action.user.en.ModelCultureEnAction" method="processUpdateModelCultureEnAction">       	
+        	<result name="input" type="chain"><param name="actionName">prepareUpdateModelCultureEn</param></result>
+        	<result name="success" type="chain"><param name="actionName">prepareUpdateModelCultureEn</param></result>
+        	<interceptor-ref name="fileUploadStack"/>
+        </action>
+        <action name="deleteModelCultureEn" class="com.newhc.admin.action.user.en.ModelCultureEnAction" method="processDeleteModelCultureEnAction">
+        	<result name="success" type="print"></result>
+       </action>
+       <action name="auditModelCultureEn" class="com.newhc.admin.action.user.en.ModelCultureEnAction" method="processAuditModelCultureEnAction">
+    		<result name="success" type="print"></result>
+    	</action>
+    	<action name="reAuditModelCultureEn" class="com.newhc.admin.action.user.en.ModelCultureEnAction" method="processReAuditModelCultureEnAction">
+    		<result name="success" type="print"></result>
+    	</action>
+    	<action name="updateAllModelCultureEn" class="com.newhc.admin.action.user.en.ModelCultureEnAction" method="procesUpdateAlltModelCultureEnAction">
+    		<result name="success" type="print"></result>
+    	</action>
+    	<action name="reUpdateAllModelCultureEn" class="com.newhc.admin.action.user.en.ModelCultureEnAction" method="procesReUpdateAlltModelCultureEnAction">
+    		<result name="success" type="print"></result>
+    	</action>
+    	<action name="deleteAllModelCultureEn" class="com.newhc.admin.action.user.en.ModelCultureEnAction" method="procesdeleteAlltModelCultureEnAction">
+    		<result name="success" type="print"></result>
+    	</action>
+    	<!-- 员工与招聘管理 -->
+    	<action name="modelEmployessEnPage" class="com.newhc.admin.action.user.en.ModelEmployessEnAction" method="processEmployessEnAction">
+    		<result name="success" type="dispatcher">/admin/english/viewModelEmployessEn.jsp</result>
+    		<interceptor-ref name="chainStack"/>
+    	</action>
+    	<action name="updateModelEmployessEn" class="com.newhc.admin.action.user.en.ModelEmployessEnAction" method="processUpdateEmployessEnAction">
+    		<result name="input" type="chain"><param name="actionName">modelEmployessEnPage</param></result>
+            <result name="success" type="chain"><param name="actionName">modelEmployessEnPage</param></result>
+            <interceptor-ref name="validationWorkflowStack"/>
+    	</action>
+    	
+    	 
+    	<!-- 厂区环境管理 -->
+    	<action name="factoryEnvironmentEnPage" class="com.newhc.admin.action.user.en.ModelFactoryEnvironmentEnAction" method="processModelFactoryEnvironmentEnAction">
+        	<result name="success" type="dispatcher">/admin/english/modelFactoryEnvironmentPageEn.jsp</result>
+       </action>
+        <action name="auditModelFactoryEnvironmentEnAction" class="com.newhc.admin.action.user.en.ModelFactoryEnvironmentEnAction" method="processAuditModelFactoryEnvironmentEnAction">
+    		<result name="success" type="print"></result>
+    	</action>
+    	 <action name="reAuditModelFactoryEnvironmentEnAction" class="com.newhc.admin.action.user.en.ModelFactoryEnvironmentEnAction" method="processReAuditModelFactoryEnvironmentEnAction">
+    		<result name="success" type="print"></result>
+    	</action>
+    	<action name="auditAllFactoryEnvironmentEn" class="com.newhc.admin.action.user.en.ModelFactoryEnvironmentEnAction" method="processAuditAllModelFactoryEnvironmentEnAction">
+    		<result name="success" type="print"></result>
+    	</action>
+    	 <action name="reAuditAllModelFactoryEnvironmentEnAction" class="com.newhc.admin.action.user.en.ModelFactoryEnvironmentEnAction" method="processReAuditAllModelFactoryEnvironmentEnAction">
+    		<result name="success" type="print"></result>
+    	</action>
+    	 <action name="deleteFactoryEnvironmentEn" class="com.newhc.admin.action.user.en.ModelFactoryEnvironmentEnAction" method="processDeleteModelFactoryEnvironmentEnAction">
+    		<result name="success" type="print"></result>
+    	</action>
+    	 <action name="deleteAllFactoryEnvironmentEn" class="com.newhc.admin.action.user.en.ModelFactoryEnvironmentEnAction" method="processDeleteAllModelFactoryEnvironmentEnAction">
+    		<result name="success" type="print"></result>
+    	</action>
+       <action name="prepareAddFactoryEnvironmentEn" class="com.newhc.admin.action.user.en.ModelFactoryEnvironmentEnAction" method="processPrepareAddModelFactoryEnvironmentEnAction">
+        	<result name="success" type="dispatcher">/admin/english/addModelFactoryEnvironmentEn.jsp</result>
+        	<interceptor-ref name="chainStack"/>
+       </action>
+       <action name="addFactoryEnvironmentEn" class="com.newhc.admin.action.user.en.ModelFactoryEnvironmentEnAction" method="processAddModelFactoryEnvironmentEnAction">       	
+        	<result name="input" type="chain"><param name="actionName">prepareAddFactoryEnvironmentEn</param></result>
+        	<result name="success" type="chain"><param name="actionName">prepareAddFactoryEnvironmentEn</param></result>
+        	<interceptor-ref name="fileUploadStack"/>
+        </action>
+       <action name="prepareUpdateFactoryEnvironmentEn" class="com.newhc.admin.action.user.en.ModelFactoryEnvironmentEnAction" method="processPrepareUpdateModelFactoryEnvironmentEnAction">
+        	<result name="success" type="dispatcher">/admin/english/updateModelFactoryEnvironmentEn.jsp</result>
+        	<interceptor-ref name="chainStack"/>
+       </action>
+        <action name="updateFactoryEnvironmentEn" class="com.newhc.admin.action.user.en.ModelFactoryEnvironmentEnAction" method="processUpdateModelFactoryEnvironmentEnAction">       	
+        	<result name="input" type="chain"><param name="actionName">prepareUpdateFactoryEnvironmentEn</param></result>
+        	<result name="success" type="chain"><param name="actionName">prepareUpdateFactoryEnvironmentEn</param></result>
+        	<interceptor-ref name="fileUploadStack"/>
+        </action>
+        
+        <!--电子期刊类型管理 -->
+        <action name="modelPublicationTypeEnPage" class="com.newhc.admin.action.user.en.ModelPublicationTypeEnAction" method="processModelPublicationTypePageEnAction">
+        	<result name="success" type="dispatcher">/admin/english/modelPublicationTypePageEn.jsp</result>
+       </action>
+        <action name="prepareAddModelPublicationTypeEn" class="com.newhc.admin.action.user.en.ModelPublicationTypeEnAction" method="processPrepareAddModelPublicationTypeEnAction">
+        	<result name="success" type="dispatcher">/admin/english/addModelPublicationTypeEn.jsp</result>
+        	<interceptor-ref name="chainStack"/>
+       </action>
+       <action name="addModelPublicationTypeEn" class="com.newhc.admin.action.user.en.ModelPublicationTypeEnAction" method="processAddModelPublicationTypeEnAction">       	
+        	<result name="input" type="chain"><param name="actionName">prepareAddModelPublicationTypeEn</param></result>
+        	<result name="success" type="chain"><param name="actionName">prepareAddModelPublicationTypeEn</param></result>
+        	<interceptor-ref name="fileUploadStack"/>
+        </action>
+         <action name="prepareUpdateModelPublicationTypeEn" class="com.newhc.admin.action.user.en.ModelPublicationTypeEnAction" method="processPrepareUpdateModelPublicationTypeEnAction">
+        	<result name="success" type="dispatcher">/admin/english/updateModelPublicationTypeEn.jsp</result>
+        	<interceptor-ref name="chainStack"/>
+       </action>
+        <action name="updateModelPublicationTypeEn" class="com.newhc.admin.action.user.en.ModelPublicationTypeEnAction" method="processUpdateModelPublicationTypeEnAction">       	
+        	<result name="input" type="chain"><param name="actionName">prepareUpdateModelPublicationTypeEn</param></result>
+        	<result name="success" type="chain"><param name="actionName">prepareUpdateModelPublicationTypeEn</param></result>
+        	<interceptor-ref name="fileUploadStack"/>
+        </action>
+         <action name="auditModelPublicationTypeEn" class="com.newhc.admin.action.user.en.ModelPublicationTypeEnAction" method="processAuditModelPublicationTypeEnAction">
+    		<result name="success" type="print"></result>
+    	</action>
+    	 <action name="reAuditModelPublicationTypeEn" class="com.newhc.admin.action.user.en.ModelPublicationTypeEnAction" method="processReAuditModelPublicationTypeEnAction">
+    		<result name="success" type="print"></result>
+    	</action>
+    	<action name="auditAllModelPublicationTypeEn" class="com.newhc.admin.action.user.en.ModelPublicationTypeEnAction" method="processAuditAllModelPublicationTypeEnAction">
+    		<result name="success" type="print"></result>
+    	</action>
+    	 <action name="reAuditAllModelPublicationTypeEn" class="com.newhc.admin.action.user.en.ModelPublicationTypeEnAction" method="processReAuditAllModelPublicationTypeEnAction">
+    		<result name="success" type="print"></result>
+    	</action>
+    	 <action name="deleteModelPublicationTypeEn" class="com.newhc.admin.action.user.en.ModelPublicationTypeEnAction" method="processDeleteModelPublicationTypeEnAction">
+    		<result name="success" type="print"></result>
+    	</action>
+    	 <action name="deleteAllModelPublicationTypeEn" class="com.newhc.admin.action.user.en.ModelPublicationTypeEnAction" method="processDeleteAllModelNewsEnAction">
+    		<result name="success" type="print"></result>
+    	</action>
+        <!--电子期刊管理 -->
+        <action name="modelPeriodicalEnPage" class="com.newhc.admin.action.user.en.ModelPeriodicalEnAction" method="processModelPeriodicalPageEnAction">
+        	<result name="success" type="dispatcher">/admin/english/modelPeriodicalPageEn.jsp</result>
+       </action>
+        <action name="prepareAddModelPeriodicalEn" class="com.newhc.admin.action.user.en.ModelPeriodicalEnAction" method="processPrepareAddModelPeriodicalEnAction">
+        	<result name="success" type="dispatcher">/admin/english/addModelPeriodicalEn.jsp</result>
+        	<interceptor-ref name="chainStack"/>
+       </action>
+       <action name="addModelPeriodicalEn" class="com.newhc.admin.action.user.en.ModelPeriodicalEnAction" method="processAddModelPeriodicalEnAction">       	
+        	<result name="input" type="chain"><param name="actionName">prepareAddModelPeriodicalEn</param></result>
+        	<result name="success" type="chain"><param name="actionName">prepareAddModelPeriodicalEn</param></result>
+        	<interceptor-ref name="fileUploadStack"/>
+        </action>
+         <action name="prepareUpdateModelPeriodicalEn" class="com.newhc.admin.action.user.en.ModelPeriodicalEnAction" method="processPrepareUpdateModelPeriodicalEnAction">
+        	<result name="success" type="dispatcher">/admin/english/updateModelPeriodicalEn.jsp</result>
+        	<interceptor-ref name="chainStack"/>
+       </action>
+        <action name="updateModelPeriodicalEn" class="com.newhc.admin.action.user.en.ModelPeriodicalEnAction" method="processUpdateModelPeriodicalEnAction">       	
+        	<result name="input" type="chain"><param name="actionName">prepareUpdateModelPeriodicalEn</param></result>
+        	<result name="success" type="chain"><param name="actionName">prepareUpdateModelPeriodicalEn</param></result>
+        	<interceptor-ref name="fileUploadStack"/>
+        </action>
+         <action name="auditModelPeriodicalEn" class="com.newhc.admin.action.user.en.ModelPeriodicalEnAction" method="processAuditModelPeriodicalEnAction">
+    		<result name="success" type="print"></result>
+    	</action>
+    	 <action name="reAuditModelPeriodicalEn" class="com.newhc.admin.action.user.en.ModelPeriodicalEnAction" method="processReAuditModelPeriodicalEnAction">
+    		<result name="success" type="print"></result>
+    	</action>
+    	<action name="auditAllModelPeriodicalEn" class="com.newhc.admin.action.user.en.ModelPeriodicalEnAction" method="processAuditAllModelPeriodicalEnAction">
+    		<result name="success" type="print"></result>
+    	</action>
+    	 <action name="reAuditAllModelPeriodicalEn" class="com.newhc.admin.action.user.en.ModelPeriodicalEnAction" method="processReAuditAllModelPeriodicalEnAction">
+    		<result name="success" type="print"></result>
+    	</action>
+    	 <action name="deleteModelPeriodicalEn" class="com.newhc.admin.action.user.en.ModelPeriodicalEnAction" method="processDeleteModelPeriodicalEnAction">
+    		<result name="success" type="print"></result>
+    	</action>
+    	 <action name="deleteAllModelPeriodicalEn" class="com.newhc.admin.action.user.en.ModelPeriodicalEnAction" method="processDeleteAllModelNewsEnAction">
+    		<result name="success" type="print"></result>
+    	</action>
+    	<!--电子期刊内容管理 -->
+        <action name="modelPeriodicalCenterEnPage" class="com.newhc.admin.action.user.en.ModelPeriodicalCenterEnAction" method="processModelPeriodicalCenterPageEnAction">
+        	<result name="success" type="dispatcher">/admin/english/modelPeriodicalCenterPageEn.jsp</result>
+       </action>
+        <action name="prepareAddModelPeriodicalCenterEn" class="com.newhc.admin.action.user.en.ModelPeriodicalCenterEnAction" method="processPrepareAddModelPeriodicalCenterEnAction">
+        	<result name="success" type="dispatcher">/admin/english/addModelPeriodicalCenterEn.jsp</result>
+        	<interceptor-ref name="chainStack"/>
+       </action>
+       <action name="addModelPeriodicalCenterEn" class="com.newhc.admin.action.user.en.ModelPeriodicalCenterEnAction" method="processAddModelPeriodicalCenterEnAction">       	
+        	<result name="input" type="chain"><param name="actionName">prepareAddModelPeriodicalCenterEn</param></result>
+        	<result name="success" type="chain"><param name="actionName">prepareAddModelPeriodicalCenterEn</param></result>
+        	<interceptor-ref name="fileUploadStack"/>
+        </action>
+         <action name="prepareUpdateModelPeriodicalCenterEn" class="com.newhc.admin.action.user.en.ModelPeriodicalCenterEnAction" method="processPrepareUpdateModelPeriodicalCenterEnAction">
+        	<result name="success" type="dispatcher">/admin/english/updateModelPeriodicalCenterEn.jsp</result>
+        	<interceptor-ref name="chainStack"/>
+       </action>
+        <action name="updateModelPeriodicalCenterEn" class="com.newhc.admin.action.user.en.ModelPeriodicalCenterEnAction" method="processUpdateModelPeriodicalCenterEnAction">       	
+        	<result name="input" type="chain"><param name="actionName">prepareUpdateModelPeriodicalCenterEn</param></result>
+        	<result name="success" type="chain"><param name="actionName">prepareUpdateModelPeriodicalCenterEn</param></result>
+        	<interceptor-ref name="fileUploadStack"/>
+        </action>
+         <action name="auditModelPeriodicalCenterEn" class="com.newhc.admin.action.user.en.ModelPeriodicalCenterEnAction" method="processAuditModelPeriodicalCenterEnAction">
+    		<result name="success" type="print"></result>
+    	</action>
+    	 <action name="reAuditModelPeriodicalCenterEn" class="com.newhc.admin.action.user.en.ModelPeriodicalCenterEnAction" method="processReAuditModelPeriodicalCenterEnAction">
+    		<result name="success" type="print"></result>
+    	</action>
+    	<action name="auditAllModelPeriodicalCenterEn" class="com.newhc.admin.action.user.en.ModelPeriodicalCenterEnAction" method="processAuditAllModelPeriodicalCenterEnAction">
+    		<result name="success" type="print"></result>
+    	</action>
+    	 <action name="reAuditAllModelPeriodicalCenterEn" class="com.newhc.admin.action.user.en.ModelPeriodicalCenterEnAction" method="processReAuditAllModelPeriodicalCenterEnAction">
+    		<result name="success" type="print"></result>
+    	</action>
+    	 <action name="deleteModelPeriodicalCenterEn" class="com.newhc.admin.action.user.en.ModelPeriodicalCenterEnAction" method="processDeleteModelPeriodicalCenterEnAction">
+    		<result name="success" type="print"></result>
+    	</action>
+    	 <action name="deleteAllModelPeriodicalCenterEn" class="com.newhc.admin.action.user.en.ModelPeriodicalCenterEnAction" method="processDeleteAllModelNewsEnAction">
+    		<result name="success" type="print"></result>
+    	</action>
+    	<!-- 查看应聘信息 -->
+    	<action name="modelApplyforEnPage" class="com.newhc.admin.action.user.en.ModelApplyforEnAction" method="processModelApplyforPageEnAction">
+        	<result name="success" type="dispatcher">/admin/english/modelApplyforPageEn.jsp</result>
+       </action>
+       <action name="queryModelApplyforEn" class="com.newhc.admin.action.user.en.ModelApplyforEnAction" method="processQueryModelApplyforEnAction">
+        	<result name="success" type="dispatcher">/admin/english/queryModelApplyforEn.jsp</result>
+       </action>
+        <action name="deleteModelApplyforEn" class="com.newhc.admin.action.user.en.ModelApplyforEnAction" method="processDeleteModelApplyforEnAction">
+    		<result name="success" type="print"></result>
+    	</action>
+    	<action name="deleteAllModelApplyforEn" class="com.newhc.admin.action.user.en.ModelApplyforEnAction" method="processDeleteAllModelApplyforEnAction">
+    		<result name="success" type="print"></result>
+    	</action>
+    	<action name="downloadFilesApplyforEn" class="com.newhc.admin.action.user.en.ModelApplyforEnAction" method="processDownloadFiles">
+    		<result name="success" type="print"></result>
+    	</action>
+    	
+    	<!--视频分类管理 -->
+		<action name="modelVideoCategoryEnPage" class="com.newhc.admin.action.user.en.ModelVideoCategoryEnAction" method="processModelVideoCategoryPageEnAction">
+    		<result name="success" type="dispatcher">/admin/english/modelVideoCategoryPageEn.jsp</result>
+    	</action>
+    	<action name="auditModelVideoCategoryEn" class="com.newhc.admin.action.user.en.ModelVideoCategoryEnAction" method="processAuditModelVideoCategoryEnAction">
+    		<result name="success" type="print"></result>
+    	</action>
+    	<action name="reAuditModelVideoCategoryEn" class="com.newhc.admin.action.user.en.ModelVideoCategoryEnAction" method="processReAuditModelVideoCategoryEnAction">
+    		<result name="success" type="print"></result>
+    	</action>
+    	<action name="prepareAddModelVideoCategoryEn" class="com.newhc.admin.action.user.en.ModelVideoCategoryEnAction" method="processPrepareAddModelVideoCategoryEnAction">
+    		<result name="success" type="dispatcher">/admin/english/addModelVideoCategoryEn.jsp</result>
+    		<interceptor-ref name="chainStack"/>
+    	</action>
+    	<action name="addModelVideoCategoryEn" class="com.newhc.admin.action.user.en.ModelVideoCategoryEnAction" method="processAddModelVideoCategoryEnAction">
+    		<result name="input" type="chain"><param name="actionName">prepareAddModelVideoCategoryEn</param></result>
+            <result name="success" type="chain"><param name="actionName">prepareAddModelVideoCategoryEn</param></result>
+            <interceptor-ref name="fileUploadStack"/>
+        </action>
+        <action name="prepareUpdateModelVideoCategoryEn" class="com.newhc.admin.action.user.en.ModelVideoCategoryEnAction" method="processPrepareUpdateModelVideoCategoryEnAction">
+    		<result name="success" type="dispatcher">/admin/english/updateModelVideoCategoryEn.jsp</result>
+    		<interceptor-ref name="chainStack"/>
+    	</action>
+    	<action name="updateModelVideoCategoryEn" class="com.newhc.admin.action.user.en.ModelVideoCategoryEnAction" method="processUpdateModelVideoCategoryEnAction">
+    		<result name="input" type="chain"><param name="actionName">prepareUpdateModelVideoCategoryEn</param></result>
+            <result name="success" type="chain"><param name="actionName">prepareUpdateModelVideoCategoryEn</param></result>
+            <interceptor-ref name="fileUploadStack"/>
+        </action>
+        <action name="deleteModelVideoCategoryEn" class="com.newhc.admin.action.user.en.ModelVideoCategoryEnAction" method="processDeleteModelVideoCategoryEnAction">
+        	<result name="success" type="print"></result>
+        </action>
+        <action name="updateAllModelVideoCategoryEn" class="com.newhc.admin.action.user.en.ModelVideoCategoryEnAction" method="processUpdateAllModelVideoCategoryEnAction">
+        	<result name="success" type="print"></result>
+        </action>
+        <action name="reUpdateAllModelVideoCategoryEn" class="com.newhc.admin.action.user.en.ModelVideoCategoryEnAction" method="processReUpdateAllModelVideoCategoryEnAction">
+        	<result name="success" type="print"></result>
+        </action>
+        <action name="deleteAllModelVideoCategoryEn" class="com.newhc.admin.action.user.en.ModelVideoCategoryEnAction" method="processDeleteAllModelVideoCategoryEnAction">
+        	<result name="success" type="print"></result>
+        </action>
+        <!-- 视频信息 --> 
+		<action name="modelVideoEnPage" class="com.newhc.admin.action.user.en.ModelVideoEnAction" method="processModelVideoPageEnAction">
+    		<result name="success" type="dispatcher">/admin/english/modelVideoPageEn.jsp</result>
+    	</action>
+    	<action name="auditModelVideoEn" class="com.newhc.admin.action.user.en.ModelVideoEnAction" method="processAuditModelVideoEnAction">
+    		<result name="success" type="print"></result>
+    	</action>
+    	<action name="reAuditModelVideoEn" class="com.newhc.admin.action.user.en.ModelVideoEnAction" method="processReAuditModelVideoEnAction">
+    		<result name="success" type="print"></result>
+    	</action>
+    	<action name="prepareAddModelVideoEn" class="com.newhc.admin.action.user.en.ModelVideoEnAction" method="processPrepareAddModelVideoEnAction">
+    		<result name="success" type="dispatcher">/admin/english/addModelVideoEn.jsp</result>
+    		<interceptor-ref name="chainStack"/>
+    	</action>
+    	<action name="addModelVideoEn" class="com.newhc.admin.action.user.en.ModelVideoEnAction" method="processAddModelVideoEnAction">
+    		<result name="input" type="chain"><param name="actionName">prepareAddModelVideoEn</param></result>
+            <result name="success" type="chain"><param name="actionName">prepareAddModelVideoEn</param></result>
+            <interceptor-ref name="fileUploadStack"/>
+        </action>
+        <action name="prepareUpdateModelVideoEn" class="com.newhc.admin.action.user.en.ModelVideoEnAction" method="processPrepareUpdateModelVideoEnAction">
+    		<result name="success" type="dispatcher">/admin/english/updateModelVideoEn.jsp</result>
+    		<interceptor-ref name="chainStack"/>
+    	</action>
+    	<action name="updateModelVideoEn" class="com.newhc.admin.action.user.en.ModelVideoEnAction" method="processUpdateModelVideoEnAction">
+    		<result name="input" type="chain"><param name="actionName">prepareUpdateModelVideoEn</param></result>
+            <result name="success" type="chain"><param name="actionName">prepareUpdateModelVideoEn</param></result>
+            <interceptor-ref name="fileUploadStack"/>
+        </action>
+        <action name="deleteModelVideoEn" class="com.newhc.admin.action.user.en.ModelVideoEnAction" method="processDeleteModelVideoEnAction">
+        	<result name="success" type="print"></result>
+        </action>
+        <action name="updateAllModelVideoEn" class="com.newhc.admin.action.user.en.ModelVideoEnAction" method="processUpdateAllModelVideoEnAction">
+        	<result name="success" type="print"></result>
+        </action>
+        <action name="reUpdateAllModelVideoEn" class="com.newhc.admin.action.user.en.ModelVideoEnAction" method="processReUpdateAllModelVideoEnAction">
+        	<result name="success" type="print"></result>
+        </action>
+        <action name="deleteAllModelVideoEn" class="com.newhc.admin.action.user.en.ModelVideoEnAction" method="processDeleteAllModelVideoEnAction">
+        	<result name="success" type="print"></result>
+        </action>
+        <action name="downloadVideoEn" class="com.newhc.admin.action.user.en.ModelVideoEnAction" method="processDownloadVideoEn">
+        	<result name="success" type="print"></result>
+        </action>  
+        
+        <!--辅助栏目管理-->
+		<action name="aidPartEnPage" class="com.newhc.admin.action.user.en.AidPartEnAction" method="processPageEnAction">
+			<result name="success" type="dispatcher">/admin/english/aidPartPageEn.jsp</result>
+		</action>
+		<action name="prepareAddAidPartEn" class="com.newhc.admin.action.user.en.AidPartEnAction" method="processPrepareAddEnAction">
+			<result name="success" type="dispatcher">/admin/english/addAidPartEn.jsp</result>
+			<interceptor-ref name="chainStack"></interceptor-ref>
+		</action>
+		<action name="addAidPartEn" class="com.newhc.admin.action.user.en.AidPartEnAction" method="processAddEnAction">
+			<result name="input" type="chain"><param name="actionName">prepareAddAidPartEn</param></result>
+            <result name="success" type="chain"><param name="actionName">prepareAddAidPartEn </param></result>
+            <interceptor-ref name="fileUploadStack"/>
+		</action>
+		<action name="prepareUpdateAidPartEn" class="com.newhc.admin.action.user.en.AidPartEnAction" method="processPrepareUpdateEnAction">
+			<result name="success" type="dispatcher">/admin/english/updateAidPartEn.jsp</result>
+          	<interceptor-ref name="chainStack"/>
+		</action>
+		<action name="updateAidPartEn" class="com.newhc.admin.action.user.en.AidPartEnAction" method="processUpdateEnAction">
+			<result name="input" type="chain"><param name="actionName">prepareUpdateAidPartEn</param></result>
+            <result name="success" type="chain"><param name="actionName">prepareUpdateAidPartEn</param></result>
+            <interceptor-ref name="validationWorkflowStack"/>
+		</action>
+		<action name="deleteAidPartEn" class="com.newhc.admin.action.user.en.AidPartEnAction" method="processDeleteEnAction">
+			<result name="success" type="print"></result>
+		</action>
+    	<action name="auditAidPartEn" class="com.newhc.admin.action.user.en.AidPartEnAction" method="processAuditEnAction">
+    		<result name="success" type="print"></result>
+    	</action>
+    	<action name="reAuditAidPartEn" class="com.newhc.admin.action.user.en.AidPartEnAction" method="processReAuditEnAction">
+    		<result name="success" type="print"></result>
+    	</action>
+    	<action name="updateAllAidPartEn" class="com.newhc.admin.action.user.en.AidPartEnAction" method="processUpdateAllEnAction">
+			<result name="success" type="print"></result>
+		</action>
+		<action name="updateReAllAidPartEn" class="com.newhc.admin.action.user.en.AidPartEnAction" method="processUpdateReAllEnAction">
+			<result name="success" type="print"></result>
+		</action>
+		<action name="deleteAllAidPartEn" class="com.newhc.admin.action.user.en.AidPartEnAction" method="processDeleteAllEnAction">
+			<result name="success" type="print"></result>
+		</action>
+		<!--电子画册类型管理 -->
+        <action name="modelAlbumTypeEnPage" class="com.newhc.admin.action.user.en.ModelAlbumTypeEnAction" method="processModelAlbumTypePageEnAction">
+        	<result name="success" type="dispatcher">/admin/english/modelAlbumTypePageEn.jsp</result>
+       </action>
+        <action name="prepareAddModelAlbumTypeEn" class="com.newhc.admin.action.user.en.ModelAlbumTypeEnAction" method="processPrepareAddModelAlbumTypeEnAction">
+        	<result name="success" type="dispatcher">/admin/english/addModelAlbumTypeEn.jsp</result>
+        	<interceptor-ref name="chainStack"/>
+       </action>
+       <action name="addModelAlbumTypeEn" class="com.newhc.admin.action.user.en.ModelAlbumTypeEnAction" method="processAddModelAlbumTypeEnAction">       	
+        	<result name="input" type="chain"><param name="actionName">prepareAddModelAlbumTypeEn</param></result>
+        	<result name="success" type="chain"><param name="actionName">prepareAddModelAlbumTypeEn</param></result>
+        	<interceptor-ref name="fileUploadStack"/>
+        </action>
+         <action name="prepareUpdateModelAlbumTypeEn" class="com.newhc.admin.action.user.en.ModelAlbumTypeEnAction" method="processPrepareUpdateModelAlbumTypeEnAction">
+        	<result name="success" type="dispatcher">/admin/english/updateModelAlbumTypeEn.jsp</result>
+        	<interceptor-ref name="chainStack"/>
+       </action>
+        <action name="updateModelAlbumTypeEn" class="com.newhc.admin.action.user.en.ModelAlbumTypeEnAction" method="processUpdateModelAlbumTypeEnAction">       	
+        	<result name="input" type="chain"><param name="actionName">prepareUpdateModelAlbumTypeEn</param></result>
+        	<result name="success" type="chain"><param name="actionName">prepareUpdateModelAlbumTypeEn</param></result>
+        	<interceptor-ref name="fileUploadStack"/>
+        </action>
+         <action name="auditModelAlbumTypeEn" class="com.newhc.admin.action.user.en.ModelAlbumTypeEnAction" method="processAuditModelAlbumTypeEnAction">
+    		<result name="success" type="print"></result>
+    	</action>
+    	 <action name="reAuditModelAlbumTypeEn" class="com.newhc.admin.action.user.en.ModelAlbumTypeEnAction" method="processReAuditModelAlbumTypeEnAction">
+    		<result name="success" type="print"></result>
+    	</action>
+    	<action name="auditAllModelAlbumTypeEn" class="com.newhc.admin.action.user.en.ModelAlbumTypeEnAction" method="processAuditAllModelAlbumTypeEnAction">
+    		<result name="success" type="print"></result>
+    	</action>
+    	 <action name="reAuditAllModelAlbumTypeEn" class="com.newhc.admin.action.user.en.ModelAlbumTypeEnAction" method="processReAuditAllModelAlbumTypeEnAction">
+    		<result name="success" type="print"></result>
+    	</action>
+    	 <action name="deleteModelAlbumTypeEn" class="com.newhc.admin.action.user.en.ModelAlbumTypeEnAction" method="processDeleteModelAlbumTypeEnAction">
+    		<result name="success" type="print"></result>
+    	</action>
+    	 <action name="deleteAllModelAlbumTypeEn" class="com.newhc.admin.action.user.en.ModelAlbumTypeEnAction" method="processDeleteAllModelNewsEnAction">
+    		<result name="success" type="print"></result>
+    	</action>
+    	 <!--电子画册管理 -->
+        <action name="modelAlbumEnPage" class="com.newhc.admin.action.user.en.ModelAlbumEnAction" method="processModelAlbumPageEnAction">
+        	<result name="success" type="dispatcher">/admin/english/modelAlbumPageEn.jsp</result>
+       </action>
+        <action name="prepareAddModelAlbumEn" class="com.newhc.admin.action.user.en.ModelAlbumEnAction" method="processPrepareAddModelAlbumEnAction">
+        	<result name="success" type="dispatcher">/admin/english/addModelAlbumEn.jsp</result>
+        	<interceptor-ref name="chainStack"/>
+       </action>
+       <action name="addModelAlbumEn" class="com.newhc.admin.action.user.en.ModelAlbumEnAction" method="processAddModelAlbumEnAction">       	
+        	<result name="input" type="chain"><param name="actionName">prepareAddModelAlbumEn</param></result>
+        	<result name="success" type="chain"><param name="actionName">prepareAddModelAlbumEn</param></result>
+        	<interceptor-ref name="fileUploadStack"/>
+        </action>
+         <action name="prepareUpdateModelAlbumEn" class="com.newhc.admin.action.user.en.ModelAlbumEnAction" method="processPrepareUpdateModelAlbumEnAction">
+        	<result name="success" type="dispatcher">/admin/english/updateModelAlbumEn.jsp</result>
+        	<interceptor-ref name="chainStack"/>
+       </action>
+        <action name="updateModelAlbumEn" class="com.newhc.admin.action.user.en.ModelAlbumEnAction" method="processUpdateModelAlbumEnAction">       	
+        	<result name="input" type="chain"><param name="actionName">prepareUpdateModelAlbumEn</param></result>
+        	<result name="success" type="chain"><param name="actionName">prepareUpdateModelAlbumEn</param></result>
+        	<interceptor-ref name="fileUploadStack"/>
+        </action>
+         <action name="auditModelAlbumEn" class="com.newhc.admin.action.user.en.ModelAlbumEnAction" method="processAuditModelAlbumEnAction">
+    		<result name="success" type="print"></result>
+    	</action>
+    	 <action name="reAuditModelAlbumEn" class="com.newhc.admin.action.user.en.ModelAlbumEnAction" method="processReAuditModelAlbumEnAction">
+    		<result name="success" type="print"></result>
+    	</action>
+    	<action name="auditAllModelAlbumEn" class="com.newhc.admin.action.user.en.ModelAlbumEnAction" method="processAuditAllModelAlbumEnAction">
+    		<result name="success" type="print"></result>
+    	</action>
+    	 <action name="reAuditAllModelAlbumEn" class="com.newhc.admin.action.user.en.ModelAlbumEnAction" method="processReAuditAllModelAlbumEnAction">
+    		<result name="success" type="print"></result>
+    	</action>
+    	 <action name="deleteModelAlbumEn" class="com.newhc.admin.action.user.en.ModelAlbumEnAction" method="processDeleteModelAlbumEnAction">
+    		<result name="success" type="print"></result>
+    	</action>
+    	 <action name="deleteAllModelAlbumEn" class="com.newhc.admin.action.user.en.ModelAlbumEnAction" method="processDeleteAllModelNewsEnAction">
+    		<result name="success" type="print"></result>
+    	</action>
+		 
+		 <!-- 子栏目跳转管理 -->
+    	<action name="productsAndCustomerEnPage" class="com.newhc.admin.action.user.en.ModelColumnsJumpEnAction" method="processProductsAndCustomerEnAction">
+        	<result name="success" type="dispatcher">/admin/english/modelProductAndCustomerPageEn.jsp</result>
+       </action>
+    	<action name="empAndRecruitmentEnPage" class="com.newhc.admin.action.user.en.ModelColumnsJumpEnAction" method="processEmpAndRecruitmentEnAction">
+    		<result name="success" type="dispatcher">/admin/english/modelEmpAndRecruitmentPageEn.jsp</result>
+    	</action>
+    	<action name="cxicIntroductionEnPage" class="com.newhc.admin.action.user.en.ModelColumnsJumpEnAction" method="processCxicIntroductionEnAction">
+    		<result name="success" type="dispatcher">/admin/english/modelCxicIntroductionPageEn.jsp</result>
+    	</action>
+	</package>
+</xwork>

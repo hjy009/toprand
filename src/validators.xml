@@ -1,0 +1,20 @@
+<validators>
+    <validator name="required" class="com.opensymphony.xwork.validator.validators.RequiredFieldValidator"/>
+    <validator name="requiredstring" class="com.opensymphony.xwork.validator.validators.RequiredStringValidator"/>
+    <validator name="int" class="com.opensymphony.xwork.validator.validators.IntRangeFieldValidator" />
+    <validator name="date" class="com.opensymphony.xwork.validator.validators.DateRangeFieldValidator"/>
+    <validator name="expression" class="com.opensymphony.xwork.validator.validators.ExpressionValidator"/>
+    <validator name="fieldexpression" class="com.opensymphony.xwork.validator.validators.FieldExpressionValidator"/>
+    <validator name="email" class="com.opensymphony.xwork.validator.validators.EmailValidator"/>
+    <validator name="url" class="com.opensymphony.xwork.validator.validators.URLValidator"/>
+    <validator name="visitor" class="com.opensymphony.xwork.validator.validators.VisitorFieldValidator"/>
+    
+    <validator name="dateformat" class="cn.com.netmovie.webwork.validators.DateFormatFieldValidator"/>
+    <validator name="integer" class="cn.com.netmovie.webwork.validators.IntegerFieldValidator"/>
+    <validator name="legalstring" class="cn.com.netmovie.webwork.validators.LegalStringFieldValidator"/>
+    <validator name="illegalstring" class="cn.com.netmovie.webwork.validators.IllegalStringFieldValidator"/>
+    <validator name="patternstring" class="cn.com.netmovie.webwork.validators.PatternStringFieldValidator"/>
+    <validator name="lengthstring" class="cn.com.netmovie.webwork.validators.LengthStringFieldValidator"/>
+    <validator name="emailstring" class="cn.com.netmovie.webwork.validators.EmailFieldValidator"/>
+        
+</validators>

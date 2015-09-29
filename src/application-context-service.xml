@@ -1,0 +1,29 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE beans PUBLIC "-//SPRING//DTD BEAN//EN" "http://www.springframework.org/dtd/spring-beans.dtd">
+
+<beans>
+	<!-- ========================= TRANSACTION DEFINITIONS ======================= -->
+	<bean id="baseProxy" lazy-init="true" class="org.springframework.transaction.interceptor.TransactionProxyFactoryBean">
+		<property name="transactionManager"><ref bean="transactionManager"/></property>
+		<property name="transactionAttributes">
+			<props>
+				<prop key="get*">PROPAGATION_REQUIRED,readOnly</prop>
+				<prop key="find*">PROPAGATION_REQUIRED,readOnly</prop>
+				<prop key="load*">PROPAGATION_REQUIRED,readOnly</prop>
+				<prop key="do*">PROPAGATION_REQUIRED,-ServiceException</prop>
+			</props>
+		</property>
+	</bean>
+				
+	<!-- ============================== SERVICE OBJECT DEFINITIONS =================================== -->
+	<bean id="baseService" abstract="true" class="com.newhc.admin.service.impl.BaseServiceImpl" autowire="byName" />
+
+	<!-- ============================== SERVICE PROXY DEFINITIONS =================================== -->
+	
+	<!-- 英文service -->
+	
+	<!-- 日文service -->
+	
+	<!-- web -->
+	
+</beans>

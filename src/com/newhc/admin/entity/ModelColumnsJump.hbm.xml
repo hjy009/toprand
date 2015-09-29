@@ -1,0 +1,93 @@
+<?xml version="1.0"?>
+
+<!DOCTYPE hibernate-mapping PUBLIC
+    "-//Hibernate/Hibernate Mapping DTD 2.0//EN" 
+    "http://hibernate.sourceforge.net/hibernate-mapping-2.0.dtd">
+
+<hibernate-mapping>
+    <class
+        name="com.newhc.admin.entity.ModelColumnsJump"
+        table="model_columns_jump"
+        dynamic-update="false"
+        dynamic-insert="false"
+    >
+
+        <id
+            name="id"
+            column="ID"
+            type="java.lang.Integer"
+            unsaved-value="null"
+        >
+            <generator class="native">
+            </generator>
+        </id>
+        
+        <property
+            name="code"
+            type="java.lang.String"
+            update="true"
+            insert="true"
+            access="property"
+            column="CODE"
+            length="50"
+            not-null="true"
+        />
+
+        <property
+            name="name"
+            type="java.lang.String"
+            update="true"
+            insert="true"
+            access="property"
+            column="NAME"
+            length="255"
+            not-null="true"
+        />
+                <property
+            name="parentCode"
+            type="java.lang.String"
+            update="true"
+            insert="true"
+            access="property"
+            column="PARENT_CODE"
+        />
+
+        <property
+            name="programCode"
+            type="java.lang.String"
+            update="true"
+            insert="true"
+            access="property"
+            column="PROGRAM_CODE"
+            length="255"
+        />
+
+        <property
+            name="sequence"
+            type="java.lang.Integer"
+            update="true"
+            insert="true"
+            access="property"
+            column="SEQUENCE"
+        />
+
+        <property
+            name="createTime"
+            type="java.util.Date"
+            update="true"
+            insert="true"
+            access="property"
+            column="CREATE_TIME"
+        />
+
+
+
+        <!--
+            To add non XDoclet property mappings, create a file named
+                hibernate-properties-Dictionary.xml
+            containing the additional properties and place it in your merge dir.
+        -->
+
+    </class>
+
+</hibernate-mapping>

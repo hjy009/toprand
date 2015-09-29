@@ -1,0 +1,18 @@
+<!DOCTYPE xwork
+    PUBLIC "-//OpenSymphony Group//XWork 1.0//EN"
+    "http://www.opensymphony.com/xwork/xwork-1.0.dtd">
+    
+<xwork>
+    <include file="webwork-default.xml"/>
+    <package name="default" extends="webwork-default" >
+        <default-interceptor-ref name="defaultStack"/>
+        <global-results>
+			<result name="exception">/exception.jsp</result>
+		</global-results>
+    </package>
+    <include file="xwork-admin.xml"/>
+    <include file="xwork-admin-chinese.xml"/>
+    <include file="xwork-admin-english.xml"/>
+    <include file="xwork-web-chinese.xml"/>
+    <include file="xwork-web-english.xml"/>
+</xwork>

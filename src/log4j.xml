@@ -1,0 +1,23 @@
+<?xml version="1.0" encoding="UTF-8" ?>
+<!DOCTYPE log4j:configuration SYSTEM "log4j.dtd">
+<log4j:configuration>
+	<!-- console output -->
+	<appender name="consoleAppender" class="org.apache.log4j.ConsoleAppender">
+		<layout class="org.apache.log4j.PatternLayout">
+			<param name="ConversionPattern" value="%C %L %d{yyyy-MM-dd HH:mm:ssS} %m%n"/>
+		</layout>
+	</appender>
+	<appender name="rollingFileAppender" class="org.apache.log4j.RollingFileAppender">
+		<param name="File" value="d:/workspace/admin.imovie.vv8.com/logs/info.log"/>
+		<param name="Append" value="true"/>
+		<param name="MaxFileSize" value="500KB"/>
+		<param name="MaxBackupIndex" value="1"/>
+		<layout class="org.apache.log4j.PatternLayout">
+			<param name="ConversionPattern" value="%C %d{yyyy-MM-dd HH:mm:ssS} %m%n"/>
+		</layout>	
+	</appender>
+	<root>
+		<priority value ="INFO" />
+		<appender-ref ref="consoleAppender" />
+	</root>
+</log4j:configuration>

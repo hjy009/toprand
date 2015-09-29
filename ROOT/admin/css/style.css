@@ -1,0 +1,54 @@
+﻿@charset "utf-8";
+/*
+Powered By www.toprand.com
+*/
+
+/*Reset*/
+*{ padding:0; margin:0}
+html,div,ul,li,dl,dt,dd,p,h1,h2,h3,h4,h5,h6,img,form,embed,label{margin:0;padding:0;border:0; font-size:12px; font-weight:normal;}
+img{border:none}
+object{ display:block;}
+ul,ul li{ list-style:none;} 
+.cls{clear:both; line-height:0px!important; height:0px!important;font-size:0px!important;} 
+.play{ display:none;} 
+select,input{ vertical-align:middle;font-size:12px;}  
+a {text-decoration:none; color:#373737;}
+a:visited {text-decoration:none;}
+a:hover{ color:#ff0000}
+.dis{display:block;}
+.undis{display:none;}
+.hidden{ display:none}
+/*basic*/ 
+body{margin:0px; padding:0px; font-family:Arial, Helvetica, sans-serif; font-size:12px;}
+.lefttable td span{ padding-left:26px;}
+.lefttable td span img{ margin-right:10px; cursor:pointer}
+.lan{ color:#10549a}
+
+.tablenotice h2{ width:100%; margin-bottom:5px; font-size:14px; font-weight:bold;}
+.notext{ float:left; padding:0 20px;}
+
+.list1 li{ float:left; width:100%; line-height:21px;color:#343434;}
+.list1 li a{ color:#343434; padding-left:20px; background:url(../images/bg_dian.jpg) 10px 6px no-repeat;}
+.list1 li a:hover{ color:#ff0000}
+
+.list2 li{ float:left; color:#373737; background:url(../images/bg_li.jpg) no-repeat; width:223px; height:65px; padding:1px 0 0 2px; margin:0 20px 28px 0; display:inline;}
+
+.list2 li .l{ float:left; width:67px;}
+.list2 li .r{ float:left; padding-left:13px; width:130px; line-height:62px; font-size:14px;}
+
+.list3 li{ float:left; line-height:22px; width:100%;}
+
+/*login*/
+.logint1{ float:left; margin-top:444px; padding-left:109px; width:167px; height:39px;}
+.txt1{ float:left; width:147px; line-height:28px; height:28px; padding:0 10px; border:0; background:none;}
+
+.logint2{ float:left; margin-top:444px; padding-left:84px; width:167px; height:39px;}
+.yanzhengma{float:left; margin-top:0; padding-left:109px; width:167px;}
+.yanzhengma2{ float:right; width:71px;}
+.txt2{ float:left; width:76px; line-height:28px; height:28px; padding:0 10px; border:0; background:none;}
+.btnlogin{ float:left; background:url(../images/btn_login.jpg) no-repeat; width:78px; height:32px; cursor:pointer; border:0; margin-left:176px; display:inline;}
+
+
+
+
+

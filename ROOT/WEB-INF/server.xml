@@ -1,0 +1,21 @@
+<?xml version="1.0" encoding="utf-8" standalone="yes" ?>
+<Server port="10004" shutdown="SHUTDOWN">
+	<Listener className="org.apache.catalina.core.AprLifecycleListener" SSLEngine="on" />
+	<Listener className="org.apache.catalina.core.JasperListener" />
+	<Listener className="org.apache.catalina.mbeans.ServerLifecycleListener" />
+	<Listener className="org.apache.catalina.mbeans.GlobalResourcesLifecycleListener" />
+	<GlobalNamingResources />
+	<Service name="Catalina">
+		<Connector port="80" protocol="HTTP/1.1" connectionTimeout="20000" redirectPort="8443" useBodyEncodingForURI="true" />
+		<Engine name="Catalina" defaultHost="admin.newhuachang.com">
+			<Host name="admin.newhuachang.com">
+				<Context path="" docBase="D:\workspace\admin.newhuachang.com\ROOT" workDir="D:\workspace\admin.newhuachang.com\ROOT\WEB-INF\work" reloadable="false">
+					<Resource name="jdbc/mysql/mideatbi" auth="Container" type="javax.sql.DataSource"
+					   maxActive="100" maxIdle="30" maxWait="600000"
+					   username="new_huachang" password="86$2#093" driverClassName="com.mysql.jdbc.Driver"
+					   url="jdbc:mysql://192.168.1.60:3306/db_new_huachang?useUnicode=true&amp;characterEncoding=utf-8&amp;jdbcCompliantTruncation=false&amp;autoReconnect=true"/>
+				</Context>
+			</Host>
+		</Engine>
+	</Service>
+</Server>

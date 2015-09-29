@@ -1,0 +1,171 @@
+<?xml version="1.0"?>
+
+<!DOCTYPE hibernate-mapping PUBLIC
+    "-//Hibernate/Hibernate Mapping DTD 2.0//EN" 
+    "http://hibernate.sourceforge.net/hibernate-mapping-2.0.dtd">
+
+<hibernate-mapping>
+    <class
+        name="com.newhc.admin.entity.ModelAdvertise"
+        table="model_advertise"
+        dynamic-update="false"
+        dynamic-insert="false"
+    >
+
+        <id
+            name="id"
+            column="ID"
+            type="java.lang.Integer"
+            unsaved-value="null"
+        >
+            <generator class="native">
+            </generator>
+        </id>
+
+        <property
+            name="name"
+            type="java.lang.String"
+            update="true"
+            insert="true"
+            column="NAME"
+        />
+		<property
+            name="adPerson"
+            type="java.lang.String"
+            update="true"
+            insert="true"
+            column="AD_PERSON"
+        />
+        <property
+            name="degree"
+            type="java.lang.String"
+            update="true"
+            insert="true"
+            column="DEGREE"
+        />
+        <property
+            name="company"
+            type="java.lang.String"
+            update="true"
+            insert="true"
+            column="COMPANY"
+        />
+        <property
+            name="workingPlace"
+            type="java.lang.String"
+            update="true"
+            insert="true"
+            column="WORKING_PLACE"
+        />
+        <property
+            name="startTime"
+            type="java.util.Date"
+            update="true"
+            insert="true"
+            column="START_TIME"
+        />
+        <property
+            name="endTime"
+            type="java.util.Date"
+            update="true"
+            insert="true"
+            column="END_TIME"
+        />
+        <property
+            name="description"
+            type="java.lang.String"
+            update="true"
+            insert="true"
+            column="DESCRIPTION"
+        />
+        <property
+            name="requires"
+            type="java.lang.String"
+            update="true"
+            insert="true"
+            column="REQUIRES"
+        />
+         <property
+            name="linkman"
+            type="java.lang.String"
+            update="true"
+            insert="true"
+            column="LINKMAN"
+        />
+        <property
+            name="telephone"
+            type="java.lang.String"
+            update="true"
+            insert="true"
+            column="TELEPHONE"
+        />
+
+        <property
+            name="email"
+            type="java.lang.String"
+            update="true"
+            insert="true"
+            column="EMAIL"
+        />
+
+		<property
+            name="type"
+            type="java.lang.Integer"
+            update="true"
+            insert="true"
+            column="TYPE"
+        />
+        <property
+            name="status"
+            type="java.lang.Integer"
+            update="true"
+            insert="true"
+            column="STATUS"
+        />
+
+        
+        <property
+            name="creator"
+            type="java.lang.String"
+            update="true"
+            insert="true"
+            column="CREATOR"
+        />
+        
+        <property
+            name="updator"
+            type="java.lang.String"
+            update="true"
+            insert="true"
+            column="UPDATOR"
+        />
+        <property
+            name="createTime"
+            type="java.util.Date"
+            update="true"
+            insert="true"
+            column="CREATE_TIME"
+        />
+        <property
+            name="updateTime"
+            type="java.util.Date"
+            update="true"
+            insert="true"
+            column="UPDATE_TIME"
+        />
+		<property
+            name="pubTime"
+            type="java.util.Date"
+            update="true"
+            insert="true"
+            column="PUB_TIME"
+        />
+        <!--
+            To add non XDoclet property mappings, create a file named
+                hibernate-properties-Dictionary.xml
+            containing the additional properties and place it in your merge dir.
+        -->
+
+    </class>
+
+</hibernate-mapping>
